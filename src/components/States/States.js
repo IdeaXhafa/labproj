@@ -47,12 +47,24 @@ export class States extends Component {
 
     render(){
         const {countries,coid,coname,colocation,cocity}=this.state;
+        // const [query, setQuery] = useState("")
 
     return (
     <div>
     <StatesContainer id="states">
-      <StateH1>Potential Countries for Your Studies</StateH1>
+      <StateH1>Search for a State</StateH1>
+      <input placeholder="Search"/>
         <StatesWrapper>
+
+
+        {/* {countries.filter(co => {
+        if (query === "") {
+        return co;
+        } else if (co.CountryName.toLowerCase().includes(query.toLowerCase())) {
+        return co;
+        }
+        })} */}
+
             {countries.map(co =>
                 <State key={co.CountryId}  
                 CountryId={co.CountryId} 

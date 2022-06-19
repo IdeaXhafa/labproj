@@ -2,11 +2,13 @@ import React, {Component} from 'react'
 import { CityContainer, CityH1, CityH2,
         CityIcon, CityPP, CityCard, CitiesWrapper,
         CityP, CityIdP, OptionsP, CountryP } from './CityElements'
-import Icon1 from '../../images/city-img.svg'
 
-import { Button, ButtonToolbar } from 'react-bootstrap'
+// import './images/ano.png'
 
+import { Button, ButtonToolbar ,Image} from 'react-bootstrap'
+import axios from 'axios'
 import { EditCity } from './EditCity'
+// const image = './images/ano.png'
 
 export class City extends Component {
     
@@ -19,10 +21,13 @@ export class City extends Component {
             Country : [],
             CityPopulation: [],
             CityLocation : [],
+            FileName : [],
             isEditModalOpen : false
         };
     }
-    
+
+    imagesrc = process.env.REACT_APP_PHOTOPATH + this.props.FileName;
+
     toggleUserEditModal = ()=>{
         this.setState((state)=>{
             return{
@@ -48,7 +53,11 @@ export class City extends Component {
         return (
             <div>
                 <CityCard>
-                <CityIcon src={Icon1}/>
+                {/* <CityIcon src={Icon1}/> */}
+                {/* <CityIcon>{this.imagesrc}</CityIcon> */}
+                <Image width="100px" height="100px" {...this.imagesrc}/>
+                {/* <input type="file" onChange={this.fileSelectedHandler} />
+                <button onClick={this.fileUploadHandler}>Upload File</button> */}
                 <CityIdP key={this.props.CityId}/>
                     <CityH2>{this.props.CityName}</CityH2>
                     <CountryP>{this.props.Country}</CountryP>
@@ -72,7 +81,7 @@ export class City extends Component {
                             onClick={()=>this.deleteCity(this.props.CityId)}>
                                 Delete
                         </Button>
-                            </ButtonToolbar> 
+                    </ButtonToolbar> 
                 </CityCard>
             </div>
         )

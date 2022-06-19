@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Button,Row,Col,Form} from 'react-bootstrap';
+import {Button,Form} from 'react-bootstrap';
 import './style.css';
 import {Modal} from 'reactstrap';
 
@@ -28,7 +28,7 @@ export class AddState extends Component{
         body:JSON.stringify({
             CountryName:event.target.CountryName.value,
             CountryLocation:event.target.CountryLocation.value,
-            CapitalCity:event.target.CapitalCity.value
+            CapitalCity:event.target.CapitalCity.value,
         })
     })
     .then(res=>res.json())
@@ -71,7 +71,7 @@ export class AddState extends Component{
                                 </button>
                             </div> 
 
-                             <div className="modal-footer">
+                            <div className="modal-footer">
                                 <button onClick={this.props.onClose } className="button">Close</button>
                             </div> 
                         </Form>

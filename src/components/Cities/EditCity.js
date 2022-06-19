@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Form} from 'react-bootstrap';
+import {Form, Image} from 'react-bootstrap';
 import {Modal} from 'reactstrap';
 import './citystyling.css';
 
@@ -7,7 +7,12 @@ export class EditCity extends Component{
     constructor(props){
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleFileSelected=this.handleFileSelected.bind(this);
     }
+
+    filename = "ano.png";
+    imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
+    // imagescr = "http://localhost:5000/Photos/"+this.filename;
 
     handleSubmit(event){
         event.preventDefault();
@@ -22,7 +27,8 @@ export class EditCity extends Component{
             CityName:event.target.CityName.value,
             Country:event.target.Country.value,
             CityPopulation:event.target.value.CityPopulation,
-            CityLocation:event.target.CityLocation.value
+            CityLocation:event.target.CityLocation.value,
+            FileName:this.filename
         })
     })
     .then(res=>res.json())
@@ -32,6 +38,28 @@ export class EditCity extends Component{
     (error)=>{
         alert('Insertion failed!');
     })
+    }
+
+    handleFileSelected(event){
+        event.preventDefault();
+        this.filename=event.target.files[0].name;
+        const formData = new FormData();
+        formData.append(
+            "myFile",
+            event.target.files[0],
+            event.target.files[0].name
+        );
+        fetch("http://localhost:5000/api/city/SaveFile",{
+            method:'POST',
+            body:formData
+        })
+        .then(res=>res.json())
+        .then((result)=>{
+            this.imagesrc="http://localhost:5000/Photos/"+result;
+        },
+        (error)=>{
+            alert('photo insertion failed');
+        })
     }
 
     render(){
@@ -85,6 +113,12 @@ export class EditCity extends Component{
                                                     defaultValue={this.props.cilocation}
                                                     placeholder="CityLocation"/>
                                                 </Form.Group>
+                                    </div>
+
+                                    <div>
+                                       <Image width="200px" height="200px" 
+                                       src={process.env.REACT_APP_PHOTOPATH+this.props.filename}/>
+                                       <input onChange={this.handleFileSelected} type="File"/>
                                     </div>
 
                                                 <Form.Group>

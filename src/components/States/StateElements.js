@@ -63,7 +63,7 @@ export const StateIcon = styled.img `
 `
 
 export const StateH1 = styled.h1`
-    font-size:2.5rem;
+    font-size:1.5rem;
     color:#55555;
     margin-bottom:64px;
 

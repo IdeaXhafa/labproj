@@ -75,3 +75,55 @@
     width: 70px;
     background-color: #ccb7e5;
 }
+.box {
+    text-align: left;
+    border: black ridge 1px;
+    border-radius: 10px;
+    margin: 3px;
+    width: 20rem;
+    padding-left: 10px; 
+}
+.faculty-cards{
+    background:#fff;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;  
+    align-items:center; 
+    border-radius:20px;
+    max-height:130px;
+    padding:50px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.2);
+    transition:all 0.2 ease-in-out; 
+    position: absolute;
+    right: 50px;
+}
+.fac-name{
+    height: 220px;
+    text-align: center;
+}
+.fac-drejtime{
+    height: 180px;
+    text-align: center;
+}
+.fac-pro{
+    height: 150px;
+}
+.fac-con{
+    height: 100px;
+}
+.fac-student{
+    height: 60px;
+}
+.fac-criteria{
+    height: 30px;
+}
+.fac-price{
+    height: 0px;
+}
+
+.holder{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -7,6 +7,7 @@ import Icon1 from '../../images/state-1.svg'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { EditState } from './EditState'
+import { Fk } from '../Fk/Fk'
 
 export class State extends Component {
     
@@ -45,8 +46,8 @@ export class State extends Component {
 
     render(){
         return (
-            <div>
-                <StatesCard>
+            <div className='holder'>
+                {/* <StatesCard>
                 <StateIcon src={Icon1}/>
                 <StateIdP key={this.props.CountryId}/>
                     <StateH2>{this.props.CountryName}</StateH2>
@@ -72,8 +73,30 @@ export class State extends Component {
                             onClick={()=>this.deleteCountry(this.props.CountryId)}>
                                 Delete
                         </Button>
-                            </ButtonToolbar> 
-                </StatesCard>
+                    </ButtonToolbar> 
+                </StatesCard> */}
+                <div className="box" key={this.props.CountryId}>
+                    <p>{this.props.CountryName} , {this.props.CountryLocation} , {this.props.CapitalCity}</p>
+
+                    
+                        <button className="mr-1" variant="info"
+                            onClick={this.toggleUserEditModal}>
+                            Edit
+                        </button> 
+                        {this.state.isEditModalOpen ?
+                        <EditState 
+                        isEditModalOpen={this.state.isEditModalOpen}
+                        coid={this.props.CountryId}
+                        onClose={this.toggleUserEditModal}
+                        /> 
+                        :''}
+
+                        <button className="mr-2" variant="danger"
+                            onClick={()=>this.deleteCountry(this.props.CountryId)}>
+                                Delete
+                        </button>
+                </div>
+                
             </div>
         )
 }

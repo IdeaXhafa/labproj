@@ -40,7 +40,7 @@ export class Cities extends Component {
     }
 
     render(){
-        const {cities,ciid,ciname,country,cipopulation,cilocation}=this.state;
+        const {cities,ciid,ciname,country,cipopulation,cilocation,file}=this.state;
 
     return (
     <div>
@@ -53,7 +53,8 @@ export class Cities extends Component {
                 CityName={ci.CityName} 
                 Country={ci.Country}
                 CityPopulation={ci.CityPopulation}
-                CityLocation={ci.CityLocation} >
+                CityLocation={ci.CityLocation} 
+                >
                 </City>
             )} 
 
@@ -65,11 +66,11 @@ export class Cities extends Component {
                   country={country}
                   cipopulation={cipopulation}
                   cilocation={cilocation}
+                  file={file}
                   />
                   :''}
                 
         </CitiesWrapper> 
-        
     </CityContainer>
     </div>
     )
