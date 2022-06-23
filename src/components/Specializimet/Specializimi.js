@@ -10,8 +10,8 @@ export class Specializimi extends Component {
         super(props);
 
         this.state = {
-            SpecializimiId : [],
-            SpecializimiName : [],
+            SId : [],
+            SName : [],
             Drejtimi : [],
             DrejtimiName : [],
             Advantages : [],
@@ -34,7 +34,7 @@ export class Specializimi extends Component {
         //delete function
         deleteSpec(specid){
             if(window.confirm('Are you sure you want to delete this Specilazation?')){
-                fetch("http://localhost:5000/api/specializimet/"+specid,{
+                fetch("http://localhost:5000/api/specializime/"+specid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
@@ -47,11 +47,14 @@ export class Specializimi extends Component {
         render(){
             return ( 
                 <div className='holder'>
-                    <div className="box" key={this.props.SpecializimiId}>
-                        <p>{this.props.SpecializimiName}</p>
-                        <p>{this.props.Drejtimi} , {this.props.DrejtimiName}, 
-                        {this.props.Advantages}, {this.props.Disadvantages}, 
-                        {this.props.Popularity}, {this.props.Jobs}, {this.props.Payment}</p>
+                    <div className="box" key={this.props.SId}>
+                        <p className='spec-name'>{this.props.SName}</p>
+                        <p>Department: {this.props.Drejtimi} , {this.props.DrejtimiName}</p>
+                        <p>Advantages: {this.props.Advantages}</p>
+                        <p>Disadvantages: {this.props.Disadvantages}</p>
+                        <p>Popularity: {this.props.Popularity}</p>
+                        <p>Jobs you could work with this degree: {this.props.Jobs}</p>
+                        <p>Salary: {this.props.Payment}</p>
     
                             <button className="mr-1" variant="info"
                                 onClick={this.toggleUserEditModal}>
@@ -61,13 +64,13 @@ export class Specializimi extends Component {
                             {this.state.isEditModalOpen ?
                             <EditSpecializim
                             isEditModalOpen={this.state.isEditModalOpen}
-                            specid={this.props.SpecializimiId}
+                            specid={this.props.SId}
                             onClose={this.toggleUserEditModal}
                             /> 
                             :''}
     
                             <button className="mr-2" variant="danger"
-                                onClick={()=>this.deleteSpec(this.props.SpecializimiId)}>
+                                onClick={()=>this.deleteSpec(this.props.SId)}>
                                     Delete
                             </button> 
                     </div>

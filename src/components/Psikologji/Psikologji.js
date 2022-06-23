@@ -46,8 +46,10 @@ export class Psikologji extends Component {
         return (
             <div className='holder'>
                 <div className="box" key={this.props.PsikoId}>
-                    <p>{this.props.Name} , {this.props.Nr_Tel} , {this.props.Price}, {this.props.Koha}</p>
-
+                    <p>{this.props.Name} </p>
+                    <p>Contact:  {this.props.Nr_Tel} </p>
+                    <p>Price: {this.props.Price}</p>
+                    <p>How much time the therapist spends based on the Price: {this.props.Koha}</p>
                     
                         <button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>

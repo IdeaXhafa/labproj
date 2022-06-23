@@ -50,6 +50,7 @@ export class Infot extends Component {
     return (
     <div>
     <div id="states">
+    <h3 className='uni'>Information for Courses to Focus on</h3>
         <div>
 
             {infot.map(inf =>

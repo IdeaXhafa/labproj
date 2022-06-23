@@ -83,3 +83,10 @@
     width: 20rem;
     padding-left: 10px; 
 }
+
+.prof-name{
+    color: #01579b;
+    font-size: larger;
+    text-align: center;
+    font-weight: 500;
+}

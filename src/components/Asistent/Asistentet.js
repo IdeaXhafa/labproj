@@ -50,6 +50,7 @@ export class Asistentet extends Component {
     return (
     <div>
     <div id="states">
+    <h2 className='uni'>Asistent</h2>
         <div>
 
             {asistent.map(asi =>

@@ -90,4 +90,9 @@
     width: 20rem;
     padding-left: 10px; 
 }
-
+.fk-name{
+    font-weight: 700;
+}
+.uni{
+    text-align: center;
+}

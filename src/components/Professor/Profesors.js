@@ -1,20 +1,20 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
 import { AddProf } from './AddProf'
-import { Professor } from './Professor'
+import { Profesor } from './Profesor'
 
-export class Professors extends Component {
+export class Profesors extends Component {
     
     constructor(props){
         super(props);
 
         this.state = {
-            prof : [],
+            profa : [],
             isModalOpen : false,
             isEditModalOpen : false
         };
@@ -22,10 +22,10 @@ export class Professors extends Component {
 
     //Fetching db data
     refreshList(){
-        fetch("http://localhost:5000/api/professor")
+        fetch("http://localhost:5000/api/profesor")
         .then(response=>response.json())
         .then(data=>{
-            this.setState({prof:data});
+            this.setState({profa:data});
         });
     }
 
@@ -45,15 +45,18 @@ export class Professors extends Component {
     }
 
     render(){
-        const {prof,profid,profname,profemail,profdrejtiminame,profdrejtimi,profschool,profpervoja,profquote}=this.state;
+        const {profa,profid,profname,profemail,profdrejtiminame,profdrejtimi,profschool,profpervoja,profquote}=this.state;
 
     return (
     <div>
-    <div id="states">
-        <div>
+    {/* <div id="states"> */}
+    <StatesContainer id="states">
+    <h2 className='uni'>Professors</h2>
+        {/* <div> */}
+        <StatesWrapper>
 
-            {prof.map(prof =>
-                <Professor key={prof.ProfId}  
+            {profa.map(prof =>
+                <Profesor key={prof.ProfId}  
                 ProfId={prof.ProfId} 
                 ProfName={prof.ProfName} 
                 Email={prof.Email} 
@@ -63,7 +66,7 @@ export class Professors extends Component {
                 Pervoja={prof.Pervoja}
                 Quote={prof.Quote} 
                 >
-                </Professor>
+                </Profesor>
             )} 
 
              <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Prof </Button>
@@ -80,9 +83,9 @@ export class Professors extends Component {
                   />
                   :''}
                 
-        </div> 
+                </StatesWrapper>
         
-    </div>
+        </StatesContainer>
     </div>
     )
 }

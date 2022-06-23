@@ -11,7 +11,8 @@
     display: none;
     position: absolute;
     margin-left: -760%;
-    background-color: #3bafcf;
+    /* background-color: #3bafcf; */
+    background-color: #86c6d8;
     width: 1519px;
     height: 500px;
     margin-top: 10px;

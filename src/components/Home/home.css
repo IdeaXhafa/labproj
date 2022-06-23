@@ -1,5 +1,6 @@
 .home-container{
-  background-image: linear-gradient(#3bafcf, black);
+  /* background-image: linear-gradient(#3bafcf, black); */
+  background-color: #bbbbbb;
   margin-top: 5px;
   height: 670px;
 }

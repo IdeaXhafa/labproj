@@ -50,6 +50,7 @@ export class Recommandations extends Component {
     return (
         <div>
         <div id="states">
+        <h3 className='uni'>Recommandations of earlier Students</h3>
             <div>
 
             {recoms.map(rec =>

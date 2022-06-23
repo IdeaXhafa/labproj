@@ -45,7 +45,7 @@ export class Cities extends Component {
     return (
     <div>
     <CityContainer id="cities">
-      <CityH1>Cities</CityH1>
+      <CityH1>Popular Cities in the liking of Students</CityH1>
         <CitiesWrapper>
             {cities.map(ci =>
                 <City key={ci.CityId}  

@@ -6,7 +6,7 @@ import React, {Component} from 'react'
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditProf } from './EditProf';
 
-export class Professor extends Component {
+export class Profesor extends Component {
     
     constructor(props){
         super(props);
@@ -34,8 +34,8 @@ export class Professor extends Component {
 
         //delete function
         deleteProf(profid){
-            if(window.confirm('Are you sure you want to delete this Prof?')){
-                fetch("http://localhost:5000/api/professor/"+profid,{
+            if(window.confirm('Are you sure you want to delete this Professor?')){
+                fetch("http://localhost:5000/api/profesor/"+profid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
@@ -49,12 +49,14 @@ export class Professor extends Component {
         return (
             <div className='holder'>
                 <div className="box" key={this.props.ProfId}>
-                    <p>{this.props.ProfName}</p> 
+                    <p className='prof-name'>{this.props.ProfName}</p> 
                     <p>{this.props.Email}</p>
-                    <p> {this.props.DrejtimiName} {this.props.Drejtimi}</p>
-                     <p>{this.props.School}</p>
-                     <p> {this.props.Pervoja}</p>
-                     <p> {this.props.Quote}</p>
+                    <p>{this.props.DrejtimiName} </p>
+                    {/* {this.props.Drejtimi} */}
+                     <p>Studied: {this.props.School}</p>
+                     <p className='text'>Experience & Studies: </p>
+                     <p>{this.props.Pervoja}</p>
+                     <p>{this.props.Quote}</p>
 
                     
                         <button className="mr-1" variant="info"

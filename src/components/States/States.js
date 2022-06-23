@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StatesContainer, StateH1, StateH2,
         StateIcon, StateP, StatesCard, StatesWrapper,
         CityP, StateIdP, OptionsP } from './StateElements'
-import Icon1 from '../../images/state-1.svg'
+// import Icon1 from '../../images/state-1.svg'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -52,7 +52,7 @@ export class States extends Component {
     return (
     <div>
     <StatesContainer id="states">
-      <StateH1>Search for a State</StateH1>
+      <StateH1>Potential States You Could Study In</StateH1>
       <input placeholder="Search"/>
         <StatesWrapper>
 

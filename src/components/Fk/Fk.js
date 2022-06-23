@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './style.css';
 import { EditFaculty } from "./EditFaculty";
+import ubt from '../images/ubt.jpg'
 
 export class Fk extends Component {
     
@@ -44,10 +45,12 @@ export class Fk extends Component {
         return (
             <div className="holder">
              <div className="box" key={this.props.FID}>
-                    <p>{this.props.FName}</p>
-                    <p>{this.props.Pros}, {this.props.Cons}</p>
-                    <p>{this.props.StudentCapacity}, {this.props.Criter}</p>
-                    <p>{this.props.Price}</p>
+                 <img width="100px" height="100px" src={ubt}/>
+                    <p className="fk-name">{this.props.FName}</p>
+                    <p>Avantages: {this.props.Pros}, {this.props.Cons}</p>
+                    <p>Student Capacity: {this.props.StudentCapacity}</p>
+                    <p> University Criteria: {this.props.Criter}</p>
+                    <p>Price: {this.props.Price}</p>
 
                         <button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>

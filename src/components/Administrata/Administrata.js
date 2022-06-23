@@ -47,8 +47,10 @@ export class Administrata extends Component {
         return (
             <div className='holder'>
                 <div className="box" key={this.props.AdministrataId}>
-                    <p>{this.props.Themeluesi} , {this.props.Description}</p>
-                    <p> {this.props.Email}, {this.props.NrTel}, {this.props.Administarta}</p>
+                    <p>{this.props.Themeluesi} </p>
+                    <p> {this.props.Description}</p>
+                    <p> {this.props.Email}</p>
+                    <p>Contact: {this.props.NrTel}, {this.props.Administarta}</p>
 
                     
                         <button className="mr-1" variant="info"

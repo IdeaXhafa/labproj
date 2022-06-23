@@ -46,7 +46,10 @@ export class Info extends Component {
         return (
             <div className='holder'>
                 <div className="box" key={this.props.InfoId}>
-                    <p>{this.props.Focus} , {this.props.Kurs} , {this.props.Price}, {this.props.Place}</p>
+                    <p>{this.props.Focus} </p>
+                    <p>Courses: {this.props.Kurs} </p>
+                    <p>Price: {this.props.Price} </p>
+                    <p>Place: {this.props.Place}</p>
 
                     
                         <button className="mr-1" variant="info"

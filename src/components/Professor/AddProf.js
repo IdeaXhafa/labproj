@@ -19,7 +19,7 @@ export class AddProf extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/professor",{
+        fetch("http://localhost:5000/api/profesor",{
         method:"POST",
         headers:{
             'Accept':'application/json',

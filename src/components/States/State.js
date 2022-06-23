@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { StatesContainer, StateH1, StateH2,
         StateIcon, StateP, StatesCard, StatesWrapper,
         CityP, StateIdP, OptionsP } from './StateElements'
-import Icon1 from '../../images/state-1.svg'
+// import Icon1 from '../../images/state-1.svg'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -76,7 +76,9 @@ export class State extends Component {
                     </ButtonToolbar> 
                 </StatesCard> */}
                 <div className="box" key={this.props.CountryId}>
-                    <p>{this.props.CountryName} , {this.props.CountryLocation} , {this.props.CapitalCity}</p>
+                    <p> Place : {this.props.CountryName} </p>
+                    <p> Location : {this.props.CountryLocation} </p>
+                    <p> CapitalCity : {this.props.CapitalCity}</p>
 
                     
                         <button className="mr-1" variant="info"

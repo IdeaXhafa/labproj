@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -22,7 +22,7 @@ export class Specializimet extends Component {
 
     //Fetching db data
     refreshList(){
-        fetch("http://localhost:5000/api/specializimet")
+        fetch("http://localhost:5000/api/specializime")
         .then(response=>response.json())
         .then(data=>{
             this.setState({specializim:data});
@@ -48,14 +48,15 @@ export class Specializimet extends Component {
         const {specializim,specid,specname,specdrejtim,specdrejtimname,specpro,speccon,specpopularity,specjobs,specpayment}=this.state;
 
     return (
-    <div>
-    <div id="states">
         <div>
+        <StatesContainer id="states">
+    <h2 className='uni'>Specializime</h2>
+        <StatesWrapper>
 
             {specializim.map(spec =>
-                <Specializimi key={spec.SpecializimiId}  
-                SpecializimiId={spec.SpecializimiId} 
-                SpecializimiName={spec.SpecializimiName} 
+                <Specializimi key={spec.SId}  
+                SId={spec.SId} 
+                SName={spec.SName} 
                 Drejtimi={spec.Drejtimi} 
                 DrejtimiName={spec.DrejtimiName}
                 Advantages={spec.Advantages}
@@ -82,9 +83,8 @@ export class Specializimet extends Component {
                   />
                   :''}
                 
-        </div> 
-        
-    </div>
+        </StatesWrapper>
+        </StatesContainer>
     </div>
     )
 }

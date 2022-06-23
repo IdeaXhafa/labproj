@@ -11,7 +11,7 @@ export class EditProf extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/professor",{
+        fetch("http://localhost:5000/api/profesor",{
         method:"PUT",
         headers:{
             'Accept':'application/json',

@@ -46,7 +46,7 @@ export class Asistent extends Component {
             <div className='holder'>
                 <div className="box" key={this.props.AsistentId}>
                     <p>{this.props.AsistentName}</p>
-                    <p>{this.props.Age}</p>
+                    <p>Age: {this.props.Age}</p>
                     <p>{this.props.Specializim}</p>
 
                     

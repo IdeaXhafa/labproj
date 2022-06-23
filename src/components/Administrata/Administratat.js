@@ -50,6 +50,7 @@ export class Administratat extends Component {
     return (
     <div>
     <div id="states">
+    <h2 className='uni'>About who created the University</h2>
         <div>
 
             {admins.map(ad =>

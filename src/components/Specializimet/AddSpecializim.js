@@ -19,14 +19,14 @@ export class AddSpecializim extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/specializimet",{
+        fetch("http://localhost:5000/api/specializime",{
         method:"POST",
         headers:{
             'Accept':'application/json',
             'Content-Type':'application/json'
         },
         body:JSON.stringify({
-            SpecializimiName:event.target.SpecializimiName.value,
+            SName:event.target.SName.value,
             Drejtimi:event.target.Drejtimi.value,
             DrejtimiName:event.target.DrejtimiName.value,
             Advantages:event.target.Advantages.value,
@@ -57,9 +57,9 @@ export class AddSpecializim extends Component{
                         <Form onSubmit={this.handleSubmit}>
 
                             <div className="rows">
-                                <Form.Label>SpecializimiName:</Form.Label>
-                                <Form.Control type="text" name="SpecializimiName" 
-                                                required placeholder="SpecializimiName"/>
+                                <Form.Label>SName:</Form.Label>
+                                <Form.Control type="text" name="SName" 
+                                                required placeholder="SName"/>
 
                                 <Form.Label>Drejtimi :</Form.Label>
                                     <Form.Control type="text" name="Drejtimi" 

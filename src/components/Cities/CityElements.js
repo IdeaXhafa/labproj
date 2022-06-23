@@ -62,7 +62,7 @@ export const CityIcon = styled.img `
 `
 
 export const CityH1 = styled.h1`
-    font-size:2.5rem;
+    font-size:1.5rem;
     color:#55555;
     margin-bottom:64px;
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditDrejtim } from './EditDrejtim';

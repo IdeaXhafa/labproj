@@ -11,15 +11,15 @@ export class EditSpecializim extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-        fetch("http://localhost:5000/api/specializimet",{
+        fetch("http://localhost:5000/api/specializime",{
         method:"PUT",
         headers:{
             'Accept':'application/json',
             'Content-Type':'application/json'
         },
         body:JSON.stringify({
-            SpecializimiId:event.target.SpecializimiId.value,
-            SpecializimiName:event.target.SpecializimiName.value,
+            SId:event.target.SId.value,
+            SName:event.target.SName.value,
             Drejtimi:event.target.Drejtimi.value,
             DrejtimiName:event.target.DrejtimiName.value,
             Advantages:event.target.Advantages.value,
@@ -50,20 +50,20 @@ export class EditSpecializim extends Component{
                                 <Form onSubmit={this.handleSubmit}>
 
                                     <div className="rows">
-                                    <Form.Group controlId="SpecializimiId">
-                                                    <Form.Label>SpecializimiId</Form.Label>
-                                                    <Form.Control type="text" name="SpecializimiId" 
+                                    <Form.Group controlId="SId">
+                                                    <Form.Label>SId</Form.Label>
+                                                    <Form.Control type="text" name="SId" 
                                                     required disabled 
                                                     defaultValue={this.props.specid}
-                                                    placeholder="SpecializimiId"/>
+                                                    placeholder="SId"/>
                                                 </Form.Group>
 
-                                                <Form.Group controlId="SpecializimiName">
-                                                    <Form.Label>SpecializimiName</Form.Label>
-                                                    <Form.Control type="text" name="SpecializimiName" 
+                                                <Form.Group controlId="SName">
+                                                    <Form.Label>SName</Form.Label>
+                                                    <Form.Control type="text" name="SName" 
                                                     required 
                                                     defaultValue={this.props.specname}
-                                                    placeholder="SpecializimiName"/>
+                                                    placeholder="SName"/>
                                                 </Form.Group>
 
                                                 <Form.Group controlId="Drejtimi">

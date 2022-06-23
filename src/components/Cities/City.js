@@ -3,7 +3,8 @@ import { CityContainer, CityH1, CityH2,
         CityIcon, CityPP, CityCard, CitiesWrapper,
         CityP, CityIdP, OptionsP, CountryP } from './CityElements'
 
-// import './images/ano.png'
+import prishtina from '../images/prishtina.jpg'
+// import milan from '../images/milan.png'
 
 import { Button, ButtonToolbar ,Image} from 'react-bootstrap'
 import axios from 'axios'
@@ -55,14 +56,15 @@ export class City extends Component {
                 <CityCard>
                 {/* <CityIcon src={Icon1}/> */}
                 {/* <CityIcon>{this.imagesrc}</CityIcon> */}
-                <Image width="100px" height="100px" {...this.imagesrc}/>
+                {/* <Image width="100px" height="100px" {...this.imagesrc}/> */}
                 {/* <input type="file" onChange={this.fileSelectedHandler} />
                 <button onClick={this.fileUploadHandler}>Upload File</button> */}
+                <CityIcon src={prishtina}/>
                 <CityIdP key={this.props.CityId}/>
                     <CityH2>{this.props.CityName}</CityH2>
                     <CountryP>{this.props.Country}</CountryP>
-                    <CityPP>{this.props.CityPopulation}</CityPP>
-                    <CityP>{this.props.CityLocation}</CityP> 
+                    <CityPP>City Population: {this.props.CityPopulation}</CityPP>
+                    <CityP>Location: {this.props.CityLocation}</CityP> 
                     
                     <ButtonToolbar>
                         <Button className="mr-1" variant="info"

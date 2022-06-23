@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -46,8 +46,8 @@ export class Drejtimet extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+        <StatesContainer id="states">
+        <StatesWrapper>
 
             {drejtimet.map(dr =>
                 <Drejtimi key={dr.DrejtimiId}  
@@ -65,9 +65,9 @@ export class Drejtimet extends Component {
                   />
                   :''}
                 
-        </div> 
+        </StatesWrapper> 
         
-    </div>
+        </StatesContainer>
     </div>
     )
 }

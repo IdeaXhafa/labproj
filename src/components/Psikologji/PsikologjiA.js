@@ -50,6 +50,7 @@ export class PsikologjiA extends Component {
     return (
     <div>
     <div id="states">
+        <p className='txt'>If you're looking for help with Therapy, we've given you some options you could follow</p>
         <div>
 
             {psikolog.map(psiko =>

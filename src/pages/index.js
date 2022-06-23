@@ -16,7 +16,7 @@ import { Punet } from '../components/PunaDhePraktika/Punet'
 import {Infot} from '../components/Info/Infot'
 // import App  from '../components/About/App'
 import {Administratat} from '../components/Administrata/Administratat'
-import {Professors} from '../components/Professor/Professors'
+import {Profesors} from '../components/Professor/Profesors'
 
 const Home=()=> {
     const [isOpen, setIsOpen] = useState(false)
@@ -34,7 +34,7 @@ const Home=()=> {
       <Fks/>
       {/* <Drejtimet/> */}
       <Specializimet/>
-      <Professors/>
+      <Profesors/>
       <Asistentet/>
       <Administratat/>
       <Recommandations/>

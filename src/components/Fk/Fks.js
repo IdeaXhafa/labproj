@@ -48,7 +48,7 @@ export class Fks extends Component {
         <div>
         <div id="states">
             
-    <h1>University Profiles</h1>
+    <h1 className='uni'>University Profiles</h1>
     <div>
             {fks.map(fa =>
                 <Fk key={fa.FId}  
