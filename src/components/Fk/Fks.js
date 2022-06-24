@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './FacElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './FacElements'
 
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
@@ -42,14 +42,14 @@ export class Fks extends Component {
     }
 
     render(){
-        const {fks,faid,faname,fapros,facons,fastudents,facriter,faprice}=this.state;
+        const {fks,faid,faname,fapros,facons,fastudents,facriter,faprice, file}=this.state;
 
     return (
         <div>
-        <div id="states">
+        <StatesContainer id="states">
             
     <h1 className='uni'>University Profiles</h1>
-    <div>
+    <StatesWrapper>
             {fks.map(fa =>
                 <Fk key={fa.FId}  
                 FName={fa.FName} 
@@ -58,6 +58,7 @@ export class Fks extends Component {
                 StudentCapacity={fa.StudentCapacity}
                 Criter={fa.Criter}
                 Price={fa.Price}
+                FileName={fa.FileName}
                 >
                 </Fk>
             )} 
@@ -72,11 +73,12 @@ export class Fks extends Component {
                             fastudents={fastudents}
                             facriter={facriter}
                             faprice={faprice}
+                            file={file}
                   />
                   :''}
                 
-        </div>
-        </div>
+        </StatesWrapper>
+        </StatesContainer>
     </div>
     )
 }

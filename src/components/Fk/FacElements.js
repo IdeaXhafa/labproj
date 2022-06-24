@@ -35,10 +35,9 @@ export const StatesWrapper = styled.div `
         padding:0 20px;
     }
 `
-
 export const CityIcon = styled.img `
-    height:100px;
-    width:100px;
+    height:110px;
+    width:110px;
     margin-bottom:10px;
 
 `

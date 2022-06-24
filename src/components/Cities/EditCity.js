@@ -10,7 +10,7 @@ export class EditCity extends Component{
         this.handleFileSelected=this.handleFileSelected.bind(this);
     }
 
-    filename = "ano.png";
+    //filename = "ano.png";
     imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
     // imagescr = "http://localhost:5000/Photos/"+this.filename;
 

@@ -45,7 +45,7 @@ export class Profesors extends Component {
     }
 
     render(){
-        const {profa,profid,profname,profemail,profdrejtiminame,profdrejtimi,profschool,profpervoja,profquote}=this.state;
+        const {profa,profid,profname,profemail,profdrejtiminame,profdrejtimi,profschool,profpervoja,profquote,file}=this.state;
 
     return (
     <div>
@@ -65,6 +65,7 @@ export class Profesors extends Component {
                 School={prof.School} 
                 Pervoja={prof.Pervoja}
                 Quote={prof.Quote} 
+                FileName={prof.FileName}
                 >
                 </Profesor>
             )} 
@@ -80,6 +81,7 @@ export class Profesors extends Component {
                   profschool={profschool}
                   profpervoja={profpervoja}
                   profquote={profquote}
+                  file={file}
                   />
                   :''}
                 

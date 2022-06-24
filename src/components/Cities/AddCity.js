@@ -6,13 +6,13 @@ import {Modal} from 'reactstrap';
 export class AddCity extends Component{
     constructor(props){
         super(props);
-        this.handleSubmit=this.handleSubmit.bind(this)
+        //this.handleSubmit=this.handleSubmit.bind(this)
         this.handleFileSelected=this.handleFileSelected.bind(this);
     }
 
-    filename = "ano.png";
-    imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
-    // imagescr = "http://localhost:5000/Photos/"+this.filename;
+    // filename = "ano.png";
+    // imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
+    imagescr = "http://localhost:5000/Photos/"+this.filename;
 
     toggleUserModal = ()=>{
         this.setState((state)=>{
@@ -22,47 +22,57 @@ export class AddCity extends Component{
         })
     }
 
-    handleSubmit(event){
-        event.preventDefault();
-        fetch("http://localhost:5000/api/city",{
-        method:"POST",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-            CityName:event.target.CityName.value,
-            Country:event.target.Country.value,
-            CityPopulation:event.target.CityPopulation.value,
-            CityLocation:event.target.CityLocation.value,
-            FileName:this.filename
-        })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
-    }
+    // handleSubmit(event){
+    //     event.preventDefault();
+    //     fetch("http://localhost:5000/api/city",{
+    //     method:"POST",
+    //     headers:{
+    //         'Accept':'application/json',
+    //         'Content-Type':'application/json'
+    //     },
+    //     body:JSON.stringify({
+    //         CityName:event.target.CityName.value,
+    //         Country:event.target.Country.value,
+    //         CityPopulation:event.target.CityPopulation.value,
+    //         CityLocation:event.target.CityLocation.value,
+    //         //FileName:this.filename
+    //         FileName:event.target.FileName.value
+    //     })
+    // })
+    // .then(res=>res.json())
+    // .then((result)=>{
+    //     alert(result);
+    // },
+    // (error)=>{
+    //     alert('Insertion failed!');
+    // })
+    // }
 
     handleFileSelected(event){
         event.preventDefault();
+        this.CityName=event.target.CityName.value;
+        this.Country=event.target.Country.value;
+        this.CityPopulation=event.target.CityPopulation.value;
+        this.CityLocation=event.target.CityLocation.value;
         this.filename=event.target.files[0].name;
         const formData = new FormData();
         formData.append(
             "myFile",
             event.target.files[0],
-            event.target.files[0].name
+            event.target.files[0].name,
+            event.target.CityName,
+            event.target.Country,
+            event.target.CityPopulation,
+            event.target.CityLocation
         );
-        fetch("http://localhost:5000/api/city/SaveFile",{
+        fetch("http://localhost:5000/api/city/",{
             method:'POST',
             body:formData
         })
         .then(res=>res.json())
         .then((result)=>{
-            this.imagesrc="http://localhost:5000/Photos/"+result;
+            //this.imagesrc="http://localhost:5000/Photos/"+result;
+            alert(result);
         },
         (error)=>{
             alert('photo insertion failed');
@@ -78,7 +88,7 @@ export class AddCity extends Component{
                         <h3 className="modal-title">Add a City</h3>
                     </div>
                     <div className="modal-mody">
-                        <Form onSubmit={this.handleSubmit}>
+                        <Form onSubmit={this.handleFileSelected}>
 
                             <div className="rows">
                                 <Form.Label>City Name:</Form.Label>
@@ -99,7 +109,7 @@ export class AddCity extends Component{
                             </div>
 
                             <div>
-                                <Image width="200px" height="200px" src={this.imagesrc}/>
+                                <Image width="200px" height="200px" src={"/images/" + this.filename}/>
                                 <input onChange={this.handleFileSelected} type="File"/>
                             </div>
 

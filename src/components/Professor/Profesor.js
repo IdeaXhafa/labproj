@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        CityIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import { EditProf } from './EditProf';
@@ -20,6 +20,7 @@ export class Profesor extends Component {
             School : [],
             Pervoja : [],
             Quote : [],
+            FileName : [],
             isEditModalOpen : false
         };
     }
@@ -49,6 +50,7 @@ export class Profesor extends Component {
         return (
             <div className='holder'>
                 <div className="box" key={this.props.ProfId}>
+                    <CityIcon src={"/images/" + this.props.FileName}></CityIcon>
                     <p className='prof-name'>{this.props.ProfName}</p> 
                     <p>{this.props.Email}</p>
                     <p>{this.props.DrejtimiName} </p>

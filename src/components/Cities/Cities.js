@@ -54,6 +54,7 @@ export class Cities extends Component {
                 Country={ci.Country}
                 CityPopulation={ci.CityPopulation}
                 CityLocation={ci.CityLocation} 
+                FileName={ci.FileName} 
                 >
                 </City>
             )} 

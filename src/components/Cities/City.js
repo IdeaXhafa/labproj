@@ -3,13 +3,11 @@ import { CityContainer, CityH1, CityH2,
         CityIcon, CityPP, CityCard, CitiesWrapper,
         CityP, CityIdP, OptionsP, CountryP } from './CityElements'
 
-import prishtina from '../images/prishtina.jpg'
-// import milan from '../images/milan.png'
 
 import { Button, ButtonToolbar ,Image} from 'react-bootstrap'
 import axios from 'axios'
 import { EditCity } from './EditCity'
-// const image = './images/ano.png'
+
 
 export class City extends Component {
     
@@ -23,6 +21,7 @@ export class City extends Component {
             CityPopulation: [],
             CityLocation : [],
             FileName : [],
+            imagesrc: [],
             isEditModalOpen : false
         };
     }
@@ -50,16 +49,35 @@ export class City extends Component {
             }
         }
 
+        // getPhoto(imagesrc){
+        //         fetch("http://localhost:5000/api/city/SaveFile"+imagesrc,{
+        //             method:'GET',
+        //             header:{
+        //                 'Accept':'application/json',
+        //                 'Content-Type':'application/json'
+        //             }
+        //         })
+        // }
+
+        // refreshP(){
+        //     fetch("http://localhost:5000/api/city/SaveFile")
+        //     .then(response=>response.json())
+        //     .then(data=>{
+        //         this.setState({imagesrc:data});
+        //     });
+        // }
+
+
     render(){
         return (
             <div>
                 <CityCard>
                 {/* <CityIcon src={Icon1}/> */}
-                {/* <CityIcon>{this.imagesrc}</CityIcon> */}
+                <CityIcon src={"/images/" + this.props.FileName} ></CityIcon>
                 {/* <Image width="100px" height="100px" {...this.imagesrc}/> */}
                 {/* <input type="file" onChange={this.fileSelectedHandler} />
                 <button onClick={this.fileUploadHandler}>Upload File</button> */}
-                <CityIcon src={prishtina}/>
+                {/* <CityIcon src={prishtina}/> */}
                 <CityIdP key={this.props.CityId}/>
                     <CityH2>{this.props.CityName}</CityH2>
                     <CountryP>{this.props.Country}</CountryP>

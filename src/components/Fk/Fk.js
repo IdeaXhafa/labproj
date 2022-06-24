@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import './style.css';
 import { EditFaculty } from "./EditFaculty";
-import ubt from '../images/ubt.jpg'
+//import ubt from '../images/ubt.jpg'
+import { StatesContainer, StateH1, StateH2,
+    CityIcon, StateP, StatesCard, StatesWrapper,
+    CityP, StateIdP, OptionsP } from './FacElements'
 
 export class Fk extends Component {
     
@@ -15,7 +18,8 @@ export class Fk extends Component {
             Cons : [],
             StudentCapacity : [],
             Criter : [],
-            Price : []
+            Price : [],
+            FileName: []
         };
     }
 
@@ -45,7 +49,8 @@ export class Fk extends Component {
         return (
             <div className="holder">
              <div className="box" key={this.props.FID}>
-                 <img width="100px" height="100px" src={ubt}/>
+                 {/* <img width="100px" height="100px" src={"/images/" + this.props.FileName}/> */}
+                 <CityIcon src={"/images/" + this.props.FileName} ></CityIcon>
                     <p className="fk-name">{this.props.FName}</p>
                     <p>Avantages: {this.props.Pros}, {this.props.Cons}</p>
                     <p>Student Capacity: {this.props.StudentCapacity}</p>
