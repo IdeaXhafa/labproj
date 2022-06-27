@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StatesContainer = styled.div `
-    height:800px;
+    height:auto;
+    margin-top: 0;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    //background:#010606;
     background:#d3d3d3;
 
     @media screen and (max-width: 768px){
@@ -19,14 +19,10 @@ export const StatesContainer = styled.div `
 `
 
 export const StatesWrapper = styled.div `
-    max-width:1000px;
+    width: 1000px;
     margin:0 auto;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
     align-items:center;
-    grid-gap:16px;
     padding:0 50px;
-
     @media screen and (max-width: 1000px){
         grid-template-columns: 1fr 1fr;
     }
@@ -35,6 +31,7 @@ export const StatesWrapper = styled.div `
         padding:0 20px;
     }
 `
+
 export const CityIcon = styled.img `
     height:110px;
     width:110px;

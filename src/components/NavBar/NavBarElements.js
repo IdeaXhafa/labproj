@@ -3,9 +3,9 @@ import {Link as LinkR} from 'react-router-dom';
 import {Link as LinkS} from 'react-scroll';
 
 export const Nav = styled.nav `
-    background: #86c6d8;
+
     height: 80px;
-    // margin-top: -80px;
+    background-color: #5fb4cb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,6 @@ export const Nav = styled.nav `
 export const NavBarContainer = styled.div ` 
 
     //i added these myself
-    position:fixed;
-    top:0;
 
     display: flex;
     justify-content: space-between;
@@ -76,6 +74,7 @@ export const NavMenu = styled.ul  `
 
 export const NavItem = styled.li  ` 
     height:80px;
+    border: none;
 `;
 
 export const NavLinks = styled(LinkS) ` 

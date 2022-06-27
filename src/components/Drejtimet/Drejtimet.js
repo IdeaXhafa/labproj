@@ -50,14 +50,15 @@ export class Drejtimet extends Component {
         <StatesWrapper>
 
             {drejtimet.map(dr =>
-                <Drejtimi key={dr.DrejtimiId}  
+                <Drejtimi style={{borderRadius: '0'}} key={dr.DrejtimiId}  
                 DrejtimiId={dr.DrejtimiId} 
                 DrejtimiName={dr.DrejtimiName} 
                 >
                 </Drejtimi>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Drejtim </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{backgroundColor: '#999', width: '150px', height: '50px',
+            marginTop: '20px', border: 'none'}}> Add Drejtim </Button>
                   {this.state.isModalOpen ? 
                   <AddDrejtim onClose={this.toggleUserModal}
                   drid={drid}

@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {Button,Form} from 'react-bootstrap';
-import './style.css';
+import './drejtimet.css';
 import {Modal} from 'reactstrap';
 
 export class AddDrejtim extends Component{
@@ -57,7 +57,7 @@ export class AddDrejtim extends Component{
                             </div>
 
                             <div>
-                                <button type="submit" className="add-btn">
+                                <button type="submit" className="add-btn" >
                                 Add Drejtim
                                 </button>
                             </div> 

@@ -6,12 +6,13 @@ import {Nav, NavBarContainer,
         NavMenu, NavItem, 
         NavLinks, NavBtn, NavBtnLink} from './NavBarElements';
 
-import {Drejtimet} from '../Drejtimet/Drejtimet'
+import {Drejtimet} from '../Drejtimet/Drejtimet';
+
 
 const NavBar = ({toggle}) => {
   return (
     <>
-      <Nav >
+      <Nav>
         <NavBarContainer >
           <NavLogo to='/'>
             YourGuide
@@ -36,10 +37,12 @@ const NavBar = ({toggle}) => {
               <NavLinks to="drejtimet">
                 <div class="dropdown">
                     <span>Career Resources</span>
-                    <div class="dropdown-content">
-                      <div class="content">
-                        {/* <p>Hello</p> */}
-                        <Drejtimet/>
+                    <div>
+                      <div class="dropdown-content">
+                        <div class="content">
+                          {/* <p>Hello</p> */}
+                          <Drejtimet/>
+                        </div>
                       </div>
                     </div>
                 </div>

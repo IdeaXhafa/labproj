@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import './style.css';
 import { EditFaculty } from "./EditFaculty";
-//import ubt from '../images/ubt.jpg'
 import { StatesContainer, StateH1, StateH2,
     CityIcon, StateP, StatesCard, StatesWrapper,
-    CityP, StateIdP, OptionsP } from './FacElements'
+    CityP, StateIdP, OptionsP } from './FacElements';
 
 export class Fk extends Component {
     
@@ -48,9 +47,9 @@ export class Fk extends Component {
     render(){
         return (
             <div className="holder">
-             <div className="box" key={this.props.FID}>
+             <div className="box" style={{width: '80%', height: 'auto', margin: '20px'}}  key={this.props.FID}>
                  {/* <img width="100px" height="100px" src={"/images/" + this.props.FileName}/> */}
-                 <CityIcon src={"/images/" + this.props.FileName} ></CityIcon>
+                 <CityIcon src={"/images/" + this.props.FileName} style={{marginLeft: '40%'}}></CityIcon>
                     <p className="fk-name">{this.props.FName}</p>
                     <p>Avantages: {this.props.Pros}, {this.props.Cons}</p>
                     <p>Student Capacity: {this.props.StudentCapacity}</p>

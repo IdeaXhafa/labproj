@@ -3,7 +3,6 @@ import { StatesContainer, StateH1, StateH2,
         StateIcon, StateP, StatesCard, StatesWrapper,
         CityP, StateIdP, OptionsP } from './FacElements'
 
-
 import { Button, ButtonToolbar } from 'react-bootstrap'
 import './style.css';
 import { Fk } from "./Fk";
@@ -45,13 +44,13 @@ export class Fks extends Component {
         const {fks,faid,faname,fapros,facons,fastudents,facriter,faprice, file}=this.state;
 
     return (
-        <div>
-        <StatesContainer id="states">
+        <div className='unis'>
+         <StatesContainer id="states">
             
     <h1 className='uni'>University Profiles</h1>
-    <StatesWrapper>
+    <StatesWrapper className='states'>
             {fks.map(fa =>
-                <Fk key={fa.FId}  
+                <Fk className='fks' key={fa.FId}  
                 FName={fa.FName} 
                 Pros={fa.Pros}
                 Cons={fa.Cons}

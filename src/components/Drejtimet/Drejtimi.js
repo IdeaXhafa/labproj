@@ -42,14 +42,14 @@ export class Drejtimi extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="box" key={this.props.DrejtimiId}>
-                    <p>{this.props.DrejtimiName}</p>
+                <div className="box" style={{border: 'none'}} key={this.props.DrejtimiId}>
+                    <p style={{color: 'white', fontSize: '23px'}}>{this.props.DrejtimiName}</p>
 
                     
-                        <button className="mr-1" variant="info"
+                        <Button className="mr-1" variant="primary" style={{color: 'white'}}
                             onClick={this.toggleUserEditModal}>
                             Edit
-                        </button> 
+                        </Button> 
                         
                         {this.state.isEditModalOpen ?
                         <EditDrejtim

@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {Form} from 'react-bootstrap';
 import {Modal} from 'reactstrap';
-import './style.css';
+import './drejtimet.css';
 
 export class EditDrejtim extends Component{
     constructor(props){
