@@ -48,28 +48,51 @@ export class AddCity extends Component{
     // })
     // }
 
-    handleFileSelected(event){
-        event.preventDefault();
-        this.CityName=event.target.CityName.value;
-        this.Country=event.target.Country.value;
-        this.CityPopulation=event.target.CityPopulation.value;
-        this.CityLocation=event.target.CityLocation.value;
-        this.filename=event.target.files[0].name;
-        const formData = new FormData();
-        formData.append(
-            "myFile",
-            event.target.files[0],
-            event.target.files[0].name,
-            event.target.CityName,
-            event.target.Country,
-            event.target.CityPopulation,
-            event.target.CityLocation
-        );
-        fetch("http://localhost:5000/api/city/",{
-            method:'POST',
-            body:formData
-        })
-        .then(res=>res.json())
+    // handleFileSelected(event){
+    //     event.preventDefault();
+    //     this.CityName=event.target.CityName.value;
+    //     this.Country=event.target.Country.value;
+    //     this.CityPopulation=event.target.CityPopulation.value;
+    //     this.CityLocation=event.target.CityLocation.value;
+    //     this.filename=event.target.files[0].name;
+    //     const formData = new FormData();
+    //     formData.append(
+    //         "myFile",
+    //         event.target.files[0],
+    //         event.target.files[0].name,
+    //         event.target.CityName,
+    //         event.target.Country,
+    //         event.target.CityPopulation,
+    //         event.target.CityLocation
+    //     );
+    //     fetch("http://localhost:5000/api/city/",{
+    //         method:'POST',
+    //         body:formData
+    //     })
+    //     .then(res=>res.json())
+    //     .then((result)=>{
+    //         //this.imagesrc="http://localhost:5000/Photos/"+result;
+    //         alert(result);
+    //     },
+    //     (error)=>{
+    //         alert('photo insertion failed');
+    //     })
+    // }
+
+    handleFileSelected(event) {
+        var data = new FormData();
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+        data.append("data", imagedata);
+
+        fetch("http://localhost:5000/api/city/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Accept": "application/json",
+        "type": "formData"
+      },
+      body: data
+    }).then(res=>res.json())
         .then((result)=>{
             //this.imagesrc="http://localhost:5000/Photos/"+result;
             alert(result);
@@ -78,6 +101,8 @@ export class AddCity extends Component{
             alert('photo insertion failed');
         })
     }
+
+
 
     render(){
         return(

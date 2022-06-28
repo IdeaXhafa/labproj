@@ -47,14 +47,14 @@ export class Specializimi extends Component {
         render(){
             return ( 
                 <div className='holder'>
-                    <div className="box" key={this.props.SId}>
-                        <p className='spec-name'>{this.props.SName}</p>
-                        <p>Department: {this.props.Drejtimi} , {this.props.DrejtimiName}</p>
-                        <p>Advantages: {this.props.Advantages}</p>
-                        <p>Disadvantages: {this.props.Disadvantages}</p>
-                        <p>Popularity: {this.props.Popularity}</p>
-                        <p>Jobs you could work with this degree: {this.props.Jobs}</p>
-                        <p>Salary: {this.props.Payment}</p>
+                    <div className="box"  style={{border: 'none', background: 'white',width:400}} key={this.props.SId}>
+                        <p className='spec-name' style={{textAlign: 'center'}}>{this.props.SName}</p>
+                        <p className='before'>Department: {this.props.Drejtimi} , {this.props.DrejtimiName}</p>
+                        <p className='before'>Advantages: {this.props.Advantages}</p>
+                        <p className='before'>Disadvantages: {this.props.Disadvantages}</p>
+                        <p className='before'>Popularity: {this.props.Popularity}</p>
+                        {/* <p className='before'>Jobs you could work with this degree: {this.props.Jobs}</p> */}
+                        {/* <p className='before'>Salary: {this.props.Payment}</p> */}
     
                             <button className="mr-1" variant="info"
                                 onClick={this.toggleUserEditModal}>
@@ -73,6 +73,12 @@ export class Specializimi extends Component {
                                 onClick={()=>this.deleteSpec(this.props.SId)}>
                                     Delete
                             </button> 
+
+                        <div className='box' style={{width:370}}>
+                            <p className='before'>Jobs you could work with this degree: {this.props.Jobs}</p>
+                            <p className='before'>Salary: {this.props.Payment}</p>
+                        </div>
+
                     </div>
                 </div>
             )

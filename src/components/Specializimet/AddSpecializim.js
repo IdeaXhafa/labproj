@@ -49,12 +49,12 @@ export class AddSpecializim extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" >
+                <div className="modal-content" style={{height:800}} >
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Specalization</h3>
                     </div>
                     <div className="modal-mody">
-                        <Form onSubmit={this.handleSubmit}>
+                        <Form onSubmit={this.handleSubmit} style={{height:600}}>
 
                             <div className="rows">
                                 <Form.Label>SName:</Form.Label>

@@ -51,7 +51,7 @@ export class Profesors extends Component {
     <div>
     {/* <div id="states"> */}
     <StatesContainer id="states">
-    <h2 className='uni'>Professors</h2>
+    <h2 className='uni'>Find the best professors from the Universities mentioned</h2>
         {/* <div> */}
         <StatesWrapper>
 

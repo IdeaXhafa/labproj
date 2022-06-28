@@ -5,6 +5,8 @@ import { StatesContainer, StateH1, StateH2,
     CityIcon, StateP, StatesCard, StatesWrapper,
     CityP, StateIdP, OptionsP } from './FacElements';
 
+import backgr from '../images/wave.jpg';
+
 export class Fk extends Component {
     
     constructor(props){
@@ -42,15 +44,16 @@ export class Fk extends Component {
                 })
             }
         }
-
-    
+        
     render(){
+        const image_url = '/static/media/backgr.6a2f906706a7f2dc0e5a.jpg';
+      
         return (
             <div className="holder">
-             <div className="box" style={{width: '80%', height: 'auto', margin: '20px'}}  key={this.props.FID}>
+             <div className="box" style={{width: '80%', height: 'auto', margin: '20px',backgroundImage : `url(${image_url})`}}  key={this.props.FID}>
                  {/* <img width="100px" height="100px" src={"/images/" + this.props.FileName}/> */}
                  <CityIcon src={"/images/" + this.props.FileName} style={{marginLeft: '40%'}}></CityIcon>
-                    <p className="fk-name">{this.props.FName}</p>
+                    <p className="fk-name" style={{marginLeft: '38%'}}>{this.props.FName}</p>
                     <p>Avantages: {this.props.Pros}, {this.props.Cons}</p>
                     <p>Student Capacity: {this.props.StudentCapacity}</p>
                     <p> University Criteria: {this.props.Criter}</p>
