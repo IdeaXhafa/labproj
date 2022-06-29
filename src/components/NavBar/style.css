@@ -8,7 +8,7 @@
   }
   
   .dropdown-content {
-    /* display: none; */
+    display: none;
     position: absolute;
     margin-left: -760%;
     background-color: #86c6d8;

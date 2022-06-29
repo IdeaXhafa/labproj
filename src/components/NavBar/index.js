@@ -52,11 +52,16 @@ const NavBar = ({toggle}) => {
               <NavLinks to="/login">Log in</NavLinks>
             </NavItem> */}
           </NavMenu>
-          <NavBtn>
+          {/* <NavBtn>
           <NavLinks to="/signin">Sign In</NavLinks>
-          </NavBtn>
+          </NavBtn> */}
           <NavLink>
-                    <Link to="login">
+                    <Link to="signup" style={{color:'white'}}>
+                    <h5>Sign up</h5>
+                    </Link>
+          </NavLink>
+          <NavLink>
+                    <Link to="login" style={{color:'white'}}>
                     <h5>Log in</h5>
                     </Link>
           </NavLink>

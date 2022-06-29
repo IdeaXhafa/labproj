@@ -18,6 +18,7 @@ import {Infot} from '../components/Info/Infot'
 import {Administratat} from '../components/Administrata/Administratat'
 import {Profesors} from '../components/Professor/Profesors'
 import {Login} from '../components/Login/Login'
+import {Signup} from '../components/Signup/Signup'
 
 const Home=()=> {
     const [isOpen, setIsOpen] = useState(false)
@@ -30,8 +31,10 @@ const Home=()=> {
     <>
       <NavBar toggle={toggle}/>
       <Routes>
+        <Route path='/signup' element={<Signup/>}/>
+      </Routes>
+      <Routes>
         <Route path='/login' element={<Login/>}/>
-
       </Routes>
       <HomePage/>
       {/* <Login/> */}
