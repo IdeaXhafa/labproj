@@ -7,7 +7,8 @@ import {Nav, NavBarContainer,
         NavLinks, NavBtn, NavBtnLink} from './NavBarElements';
 
 import {Drejtimet} from '../Drejtimet/Drejtimet';
-
+import { NavLink } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBar = ({toggle}) => {
   return (
@@ -40,7 +41,6 @@ const NavBar = ({toggle}) => {
                     <div>
                       <div class="dropdown-content">
                         <div class="content">
-                          {/* <p>Hello</p> */}
                           <Drejtimet/>
                         </div>
                       </div>
@@ -48,13 +48,18 @@ const NavBar = ({toggle}) => {
                 </div>
               </NavLinks>
             </NavItem>
+            {/* <NavItem>
+              <NavLinks to="/login">Log in</NavLinks>
+            </NavItem> */}
           </NavMenu>
           <NavBtn>
           <NavLinks to="/signin">Sign In</NavLinks>
           </NavBtn>
-          <NavBtn>
-            <NavLinks to="/login">Log In</NavLinks>
-          </NavBtn>
+          <NavLink>
+                    <Link to="login">
+                    <h5>Log in</h5>
+                    </Link>
+          </NavLink>
         </NavBarContainer>
       </Nav>
     </>

@@ -10,7 +10,6 @@ export class AddCity extends Component{
         this.handleFileSelected=this.handleFileSelected.bind(this);
     }
 
-    // filename = "ano.png";
     // imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
     imagescr = "http://localhost:5000/Photos/"+this.filename;
 
@@ -149,11 +148,6 @@ export class AddCity extends Component{
                             </div> 
                         </Form>
                     </div>
-
-                            {/* <div>
-                                <Image width="200px" height="200px" src={this.imagesrc}/>
-                                <input onChange={this.handleFileSelected} type="File"/>
-                            </div> */}
                 </div>
             </div>
             </Modal>

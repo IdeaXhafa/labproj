@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import NavBar from '../components/NavBar'
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import {Routes, Route, BrowserRouter,Link} from 'react-router-dom'
 import { States } from '../components/States/States'
 import { Cities } from '../components/Cities/Cities'
 import { Fks } from '../components/Fk/Fks'
@@ -17,6 +17,7 @@ import {Infot} from '../components/Info/Infot'
 // import App  from '../components/About/App'
 import {Administratat} from '../components/Administrata/Administratat'
 import {Profesors} from '../components/Professor/Profesors'
+import {Login} from '../components/Login/Login'
 
 const Home=()=> {
     const [isOpen, setIsOpen] = useState(false)
@@ -28,7 +29,12 @@ const Home=()=> {
     return (
     <>
       <NavBar toggle={toggle}/>
+      <Routes>
+        <Route path='/login' element={<Login/>}/>
+
+      </Routes>
       <HomePage/>
+      {/* <Login/> */}
       <States/> 
       <Cities/>
       <Fks/>
