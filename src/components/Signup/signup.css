@@ -13,7 +13,7 @@ form {
     right: -5px;
     bottom: -5px;
     z-index: 1;
-    background-image: linear-gradient(to bottom right, grey, black);
+    /* background-image: linear-gradient(to bottom right, grey, black); */
   }
   
   form .form-inner {

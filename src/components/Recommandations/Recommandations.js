@@ -29,12 +29,12 @@ export class Recommandations extends Component {
         });
     }
 
-    componentDidMount(){
-        this.refreshList();
-    }
-    componentDidUpdate(){
-        this.refreshList();
-    }
+    // componentDidMount(){
+    //     this.refreshList();
+    // }
+    // componentDidUpdate(){
+    //     this.refreshList();
+    // }
     
     toggleUserModal = ()=>{
         this.setState((state)=>{

@@ -10,8 +10,9 @@ export class AddCity extends Component{
         this.handleFileSelected=this.handleFileSelected.bind(this);
     }
 
-    // imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
-    imagescr = "http://localhost:5000/Photos/"+this.filename;
+    //imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
+    //imagescr = "http://localhost:5000/Photos/"+this.filename;
+    imagescr = "http://localhost:5000/city/"+this.filename;
 
     toggleUserModal = ()=>{
         this.setState((state)=>{
@@ -79,35 +80,39 @@ export class AddCity extends Component{
     // }
 
     handleFileSelected(event) {
+        event.preventDefault();
+
         var data = new FormData();
         var imagedata = document.querySelector('input[type="file"]').files[0];
+        var physicalPath = '../../public/images' + this.filename;
+
         data.append("data", imagedata);
 
         fetch("http://localhost:5000/api/city/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "Accept": "application/json",
-        "type": "formData"
-      },
-      body: data
-    }).then(res=>res.json())
-        .then((result)=>{
-            //this.imagesrc="http://localhost:5000/Photos/"+result;
+            method: "POST",
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Accept": "application/json",
+                "type": "formData"
+            },
+            body: data
+            }).then(res=>res.json())
+            .then((result)=>{
+                //this.imagesrc="http://localhost:5000/Photos/"+result;
+                this.filename = physicalPath + result;
             alert(result);
-        },
-        (error)=>{
-            alert('photo insertion failed');
-        })
-    }
-
+            },
+            (error)=>{
+                alert('photo insertion failed');
+            })
+        }
 
 
     render(){
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" >
+                <div className="modal-content" style={{height:700}}>
                     <div className="modal-header">
                         <h3 className="modal-title">Add a City</h3>
                     </div>
