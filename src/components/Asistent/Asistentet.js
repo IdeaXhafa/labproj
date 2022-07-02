@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-// import { StatesContainer, StateH1, StateH2,
-//         StateIcon, StateP, StatesCard, StatesWrapper,
-//         CityP, StateIdP, OptionsP } from './StateElements'
+import { StatesContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, StatesWrapper,
+        CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
 
@@ -49,9 +49,9 @@ export class Asistentet extends Component {
 
     return (
     <div>
-    <div id="states">
+    <StatesContainer id="states">
     <h2 className='uni'>Asistent</h2>
-        <div>
+    <StatesWrapper>
 
             {asistent.map(asi =>
                 <Asistent key={asi.AsistentId}  
@@ -73,9 +73,9 @@ export class Asistentet extends Component {
                   />
                   :''}
                 
-        </div> 
+        </StatesWrapper> 
         
-    </div>
+        </StatesContainer>
     </div>
     )
 }

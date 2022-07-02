@@ -17,8 +17,9 @@ import {Infot} from '../components/Info/Infot'
 // import App  from '../components/About/App'
 import {Administratat} from '../components/Administrata/Administratat'
 import {Profesors} from '../components/Professor/Profesors'
-import {Login} from '../components/Login/Login'
-import {Signup} from '../components/Signup/Signup'
+import {Login} from '../components/auth/Login/Login'
+import {Signup} from '../components/auth/Signup/Signup'
+import { Logout } from '../components/auth/LogOut/Logout'
 
 const Home=()=> {
     const [isOpen, setIsOpen] = useState(false)
@@ -36,6 +37,7 @@ const Home=()=> {
       <Routes>
         <Route path='/login' element={<Login/>}/>
       </Routes>
+      <Logout onClick={Logout} />
       <HomePage/>
       {/* <Login/> */}
       <States/> 

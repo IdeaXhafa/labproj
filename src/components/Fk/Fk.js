@@ -50,7 +50,9 @@ export class Fk extends Component {
       
         return (
             <div className="holder">
-             <div className="box" style={{width: '80%', height: 'auto', margin: '20px',backgroundImage : `url(${image_url})`}}  key={this.props.FID}>
+             <div className="box" style={{width: '80%', height: 'auto', margin: '20px', backgroundColor: 'white'
+             //backgroundImage : `url(${image_url})`
+            }}  key={this.props.FID}>
                  {/* <img width="100px" height="100px" src={"/images/" + this.props.FileName}/> */}
                  <CityIcon src={"/images/" + this.props.FileName} style={{marginLeft: '40%'}}></CityIcon>
                     <p className="fk-name" style={{marginLeft: '38%'}}>{this.props.FName}</p>

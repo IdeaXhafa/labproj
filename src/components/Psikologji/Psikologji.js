@@ -39,7 +39,7 @@ export class Psikologji extends Component {
                         'Content-Type':'application/json'
                     }
                 })
-            }
+            } 
         }
 
     render(){

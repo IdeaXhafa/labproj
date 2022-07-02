@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import {FaBars} from 'react-icons/fa';
 import './style.css';
 import {Nav, NavBarContainer, 
@@ -7,10 +7,14 @@ import {Nav, NavBarContainer,
         NavLinks, NavBtn, NavBtnLink} from './NavBarElements';
 
 import {Drejtimet} from '../Drejtimet/Drejtimet';
-import { NavLink } from "react-bootstrap";
+import { NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NavBar = ({toggle}) => {
+
+  let user = JSON.parse(localStorage.getItem('user-info'))
+  console.warn(user);
+
   return (
     <>
       <Nav>
@@ -63,6 +67,14 @@ const NavBar = ({toggle}) => {
           <NavLink>
                     <Link to="login" style={{color:'white'}}>
                     <h5>Log in</h5>
+                    </Link>
+          </NavLink>
+          {/* <NavDropdown title={user} style={{color:'white'}}>
+            <NavDropdown.Item>Log Out</NavDropdown.Item>
+          </NavDropdown> */}
+          <NavLink>
+                    <Link to="logout" style={{color:'white'}}>
+                    <h5>Log out</h5>
                     </Link>
           </NavLink>
         </NavBarContainer>

@@ -35,6 +35,7 @@ export class AddPsikolog extends Component{
     .then(res=>res.json())
     .then((result)=>{
         alert(result);
+        window.location.reload();
     },
     (error)=>{
         alert('Insertion failed!');

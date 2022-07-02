@@ -70,7 +70,8 @@ export class PsikologjiA extends Component {
                   psikoname={psikoname}
                   psikotel={psikotel}
                   psikoprice={psikoprice}
-                  psikokoha={psikokoha}/>
+                  psikokoha={psikokoha} 
+                  />
                   :''}
                 
         </div> 

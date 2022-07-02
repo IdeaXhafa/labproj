@@ -29,9 +29,9 @@ export class Recommandations extends Component {
         });
     }
 
-    // componentDidMount(){
-    //     this.refreshList();
-    // }
+    componentDidMount(){
+        this.refreshList();
+    }
     // componentDidUpdate(){
     //     this.refreshList();
     // }

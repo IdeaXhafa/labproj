@@ -47,7 +47,7 @@ export class Specializimi extends Component {
         render(){
             return ( 
                 <div className='holder'>
-                    <div className="box"  style={{border: 'none', background: 'white',width:400}} key={this.props.SId}>
+                    <div className="box"  style={{border: 'none', background: '#CBC3E3',width:400}} key={this.props.SId}>
                         <p className='spec-name' style={{textAlign: 'center'}}>{this.props.SName}</p>
                         <p className='before'>Department: {this.props.Drejtimi} , {this.props.DrejtimiName}</p>
                         <p className='before'>Advantages: {this.props.Advantages}</p>
