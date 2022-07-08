@@ -62,7 +62,7 @@ export class Recommandations extends Component {
                 </Recommandation>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Recommandation </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:150}}> Add Recommandation </Button>
                   {this.state.isModalOpen ? 
                   <AddRecom onClose={this.toggleUserModal}
                   recid={recid}

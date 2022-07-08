@@ -35,12 +35,14 @@ export class Profesor extends Component {
 
         //delete function
         deleteProf(profid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Professor?')){
                 fetch("http://localhost:5000/api/profesor/"+profid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

@@ -28,12 +28,14 @@ export class Financa extends Component {
 
         //delete function
         deleteFinanca(fid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Finance?')){
                 fetch("http://localhost:5000/api/financa/"+fid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

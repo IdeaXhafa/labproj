@@ -30,12 +30,14 @@ export class Puna extends Component {
 
         //delete function
         deletePuna(ppid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Job?')){
                 fetch("http://localhost:5000/api/punadhepraktika/"+ppid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

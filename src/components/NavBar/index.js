@@ -9,11 +9,16 @@ import {Nav, NavBarContainer,
 import {Drejtimet} from '../Drejtimet/Drejtimet';
 import { NavDropdown, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
+//import { Logout } from '../auth/LogOut/Logout'
+import Signup from '../auth/Signup/Signup';
+import { getSuggestedQuery } from '@testing-library/react';
 
 const NavBar = ({toggle}) => {
 
-  let user = JSON.parse(localStorage.getItem('user-info'))
+  function getUser(){
+  let user = JSON.parse(localStorage.getItem('signup'))
   console.warn(user);
+  }
 
   return (
     <>
@@ -36,7 +41,7 @@ const NavBar = ({toggle}) => {
               <NavLinks to="cities">Cities</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="states">Faculty</NavLinks>
+              <NavLinks to="fk">Universities</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="drejtimet">
@@ -52,13 +57,10 @@ const NavBar = ({toggle}) => {
                 </div>
               </NavLinks>
             </NavItem>
-            {/* <NavItem>
-              <NavLinks to="/login">Log in</NavLinks>
-            </NavItem> */}
+            <NavItem>
+              <NavLinks to="PunaDhePraktika">Jobs & Payment</NavLinks>
+            </NavItem>
           </NavMenu>
-          {/* <NavBtn>
-          <NavLinks to="/signin">Sign In</NavLinks>
-          </NavBtn> */}
           <NavLink>
                     <Link to="signup" style={{color:'white'}}>
                     <h5>Sign up</h5>
@@ -69,7 +71,7 @@ const NavBar = ({toggle}) => {
                     <h5>Log in</h5>
                     </Link>
           </NavLink>
-          {/* <NavDropdown title={user} style={{color:'white'}}>
+          {/* <NavDropdown title={getUser} >
             <NavDropdown.Item>Log Out</NavDropdown.Item>
           </NavDropdown> */}
           <NavLink>

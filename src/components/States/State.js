@@ -33,12 +33,14 @@ export class State extends Component {
 
         //delete function
         deleteCountry(coid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this State?')){
                 fetch("http://localhost:5000/api/country/"+coid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

@@ -33,12 +33,14 @@ export class Specializimi extends Component {
 
         //delete function
         deleteSpec(specid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Specilazation?')){
                 fetch("http://localhost:5000/api/specializime/"+specid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

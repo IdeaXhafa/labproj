@@ -37,7 +37,7 @@ const Home=()=> {
       <Routes>
         <Route path='/login' element={<Login/>}/>
       </Routes>
-      <Logout onClick={Logout} />
+      {/* <Logout onClick={Logout} /> */}
       <HomePage/>
       {/* <Login/> */}
       <States/> 

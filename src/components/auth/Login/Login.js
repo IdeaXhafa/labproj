@@ -138,11 +138,7 @@ export class Login extends Component {
         }).then((response)=>{
             response.json().then((result)=>{
                 console.warn("result",result);
-                localStorage.setItem('loginToken',JSON.stringify({
-                    login:true,
-                    store:result.token
-                }))
-                // this.setState({login:true})
+                localStorage.setItem('loginToken', result)
                 this.storeCollector()
             })
         })
@@ -162,7 +158,6 @@ export class Login extends Component {
                     response:result.message
                 })
                 console.warn("result",result);
-                
             })
         })
     }

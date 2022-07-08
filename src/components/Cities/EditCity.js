@@ -15,12 +15,14 @@ export class EditCity extends Component{
     // imagescr = "http://localhost:5000/Photos/"+this.filename;
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
         fetch("http://localhost:5000/api/city",{
         method:"PUT",
         headers:{
             'Accept':'application/json',
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':token
         },
         body:JSON.stringify({
             CityId:event.target.CityId.value,

@@ -31,12 +31,14 @@ export class Psikologji extends Component {
 
         //delete function
         deletePsikolog(psikoid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Psychologist?')){
                 fetch("http://localhost:5000/api/psikologji/"+psikoid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             } 
@@ -45,7 +47,7 @@ export class Psikologji extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="box" key={this.props.PsikoId}>
+                <div className="psiko-box" key={this.props.PsikoId}>
                     <p>{this.props.Name} </p>
                     <p>Contact:  {this.props.Nr_Tel} </p>
                     <p>Price: {this.props.Price}</p>

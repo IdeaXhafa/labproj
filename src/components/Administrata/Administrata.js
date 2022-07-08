@@ -32,12 +32,14 @@ export class Administrata extends Component {
 
         //delete function
         deleteAdm(adid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Administrate?')){
                 fetch("http://localhost:5000/api/Administrata/"+adid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

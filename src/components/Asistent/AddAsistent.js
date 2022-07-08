@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import {Button,Form} from 'react-bootstrap';
 import './style.css';
 import {Modal} from 'reactstrap';
+import { Login } from "../auth/Login/Login";
 
 export class AddAsistent extends Component{
     constructor(props){
@@ -18,12 +19,14 @@ export class AddAsistent extends Component{
     }
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
         fetch("http://localhost:5000/api/asistent",{
         method:"POST",
         headers:{
             'Accept':'application/json',
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':token
         },
         body:JSON.stringify({
             AsistentName:event.target.AsistentName.value,
@@ -36,7 +39,7 @@ export class AddAsistent extends Component{
         alert(result);
     },
     (error)=>{
-        alert('Insertion failed!');
+        alert('You do not have the authorization for this action!');
     })
     }
 

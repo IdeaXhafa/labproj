@@ -28,12 +28,14 @@ export class Drejtimi extends Component {
 
         //delete function
         deleteD(drid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Resource?')){
                 fetch("http://localhost:5000/api/drejtimi/"+drid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

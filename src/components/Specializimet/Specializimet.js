@@ -68,7 +68,7 @@ export class Specializimet extends Component {
                 </Specializimi>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Specalization </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:120}}> Add Specalization </Button>
                   {this.state.isModalOpen ? 
                   <AddSpecializim onClose={this.toggleUserModal}
                   specid={specid}

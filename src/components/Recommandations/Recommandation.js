@@ -31,12 +31,14 @@ export class Recommandation extends Component {
 
         //delete function
         deleteRec(recid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this Recommandation?')){
                 fetch("http://localhost:5000/api/recommandations/"+recid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }
@@ -45,7 +47,7 @@ export class Recommandation extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="rec-box" key={this.props.RecId}>
+                <div className="rec-box" style={{width: '40%', height: 'auto'}} key={this.props.RecId}>
                     <p>{this.props.Name}</p>
                     <p>{this.props.Recomm}</p>
 

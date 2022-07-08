@@ -38,12 +38,14 @@ export class City extends Component {
 
         //delete function
         deleteCity(ciid){
+            let token = "Bearer " + localStorage.getItem('loginToken');
             if(window.confirm('Are you sure you want to delete this City?')){
                 fetch("http://localhost:5000/api/city/"+ciid,{
                     method:'DELETE',
                     header:{
                         'Accept':'application/json',
-                        'Content-Type':'application/json'
+                        'Content-Type':'application/json',
+                        'Authorization':token
                     }
                 })
             }

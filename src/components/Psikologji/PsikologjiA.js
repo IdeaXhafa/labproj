@@ -63,7 +63,7 @@ export class PsikologjiA extends Component {
                 </Psikologji>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Psychologist </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:120}}> Add Psychologist </Button>
                   {this.state.isModalOpen ? 
                   <AddPsikolog onClose={this.toggleUserModal}
                   psikoid={psikoid}

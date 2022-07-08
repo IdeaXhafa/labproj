@@ -1,11 +1,19 @@
 import React from "react";
 import './home.css';
+import {background} from "../images/backgr.jpg";
 
 function HomePage() {
+
+  const style={ 
+    backgroundImage: "url(../images/backgr.jpg)",
+        height:'100vh',
+  }
+
+
   return (
   <div className="bg">
 
-    <div className="home-container">
+    <div className="home-container" style={{ style }}>
       
       <h1 className="plans">PLAN YOUR FUTURE</h1>
       <h4 className="goal">Our goal is to help students make informed decisions about College</h4>

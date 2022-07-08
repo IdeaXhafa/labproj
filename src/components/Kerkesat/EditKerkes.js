@@ -10,12 +10,14 @@ export class EditKerkes extends Component{
     }
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
         fetch("http://localhost:5000/api/kerkesat",{
         method:"PUT",
         headers:{
             'Accept':'application/json',
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':token
         },
         body:JSON.stringify({
             KId:event.target.KId.value,

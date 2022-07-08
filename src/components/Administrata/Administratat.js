@@ -64,7 +64,7 @@ export class Administratat extends Component {
                 </Administrata>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state'> Add Administrate </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:120}}> Add Administrate </Button>
                   {this.state.isModalOpen ? 
                   <AddAdministrat onClose={this.toggleUserModal}
                   adid={adid}

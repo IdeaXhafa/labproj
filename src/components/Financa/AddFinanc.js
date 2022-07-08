@@ -18,12 +18,14 @@ export class AddFinanc extends Component{
     }
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
         fetch("http://localhost:5000/api/financa",{
         method:"POST",
         headers:{
             'Accept':'application/json',
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization':token
         },
         body:JSON.stringify({
             Puna:event.target.Puna.value
