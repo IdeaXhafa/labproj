@@ -12,38 +12,43 @@ export class EditProf extends Component{
     handleSubmit(event){
         let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
-        fetch("http://localhost:5000/api/profesor",{
-        method:"PUT",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json',
-            'Authorization':token
-        },
-        body:JSON.stringify({
-            ProfId:event.target.ProfId.value,
-            ProfName:event.target.ProfName.value,
-            Email:event.target.Email.value,
-            DrejtimiName:event.target.DrejtimiName.value,
-            Drejtimi:event.target.Drejtimi.value,
-            School:event.target.School.value,
-            Pervoja:event.target.Pervoja.value,
-            Quote:event.target.Quote.value
+
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+
+        console.log(imagedata)
+
+        const formData = new FormData();
+        formData.append("ProfId", event.target.ProfId.value);
+        formData.append("ProfName", event.target.ProfName.value);
+        formData.append("Email", event.target.Email.value);
+        formData.append("DrejtimiName", event.target.DrejtimiName.value);
+        formData.append("Drejtimi", event.target.Drejtimi.value);
+        formData.append("School", event.target.School.value);
+        formData.append("Pervoja", event.target.Pervoja.value);
+        formData.append("Quote", event.target.Quote.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/profesor/",{
+            method:'PUT',
+            body:formData,
+            headers:{
+                'Authorization':token
+            },
         })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('update failed');
+        })
     }
 
     render(){
         return(
                 <Modal isOpen={true}>
                     <div className="container">
-                        <div className="modal-content" >
+                        <div className="modal-content" style={{height:'800px'}}>
                             <div className="modal-header">
                                 <h3 className="modal-title">Edit this Prof</h3>
                             </div>
@@ -115,6 +120,9 @@ export class EditProf extends Component{
                                                     placeholder="Quote"/>
                                                 </Form.Group>
 
+                                    </div>
+                                    <div>
+                                    <input type="File"/>
                                     </div>
 
                                                 <Form.Group>

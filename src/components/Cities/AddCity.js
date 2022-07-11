@@ -6,113 +6,54 @@ import {Modal} from 'reactstrap';
 export class AddCity extends Component{
     constructor(props){
         super(props);
-        //this.handleSubmit=this.handleSubmit.bind(this)
         this.handleFileSelected=this.handleFileSelected.bind(this);
     }
-
-    //imagesrc = process.env.REACT_APP_PHOTOPATH + this.filename;
-    //imagescr = "http://localhost:5000/Photos/"+this.filename;
-    imagescr = "http://localhost:5000/city/"+this.filename;
 
     toggleUserModal = ()=>{
         this.setState((state)=>{
             return{
-                isModalOpen : !super.state.isModalOpen
+                isModalOpen : !super.state.isModalOpen,
+                image : ''
             }
         })
     }
 
-    // handleSubmit(event){
-    //     event.preventDefault();
-    //     fetch("http://localhost:5000/api/city",{
-    //     method:"POST",
-    //     headers:{
-    //         'Accept':'application/json',
-    //         'Content-Type':'application/json'
-    //     },
-    //     body:JSON.stringify({
-    //         CityName:event.target.CityName.value,
-    //         Country:event.target.Country.value,
-    //         CityPopulation:event.target.CityPopulation.value,
-    //         CityLocation:event.target.CityLocation.value,
-    //         //FileName:this.filename
-    //         FileName:event.target.FileName.value
-    //     })
-    // })
-    // .then(res=>res.json())
-    // .then((result)=>{
-    //     alert(result);
-    // },
-    // (error)=>{
-    //     alert('Insertion failed!');
-    // })
-    // }
-
-    // handleFileSelected(event){
-    //     event.preventDefault();
-    //     this.CityName=event.target.CityName.value;
-    //     this.Country=event.target.Country.value;
-    //     this.CityPopulation=event.target.CityPopulation.value;
-    //     this.CityLocation=event.target.CityLocation.value;
-    //     this.filename=event.target.files[0].name;
-    //     const formData = new FormData();
-    //     formData.append(
-    //         "myFile",
-    //         event.target.files[0],
-    //         event.target.files[0].name,
-    //         event.target.CityName,
-    //         event.target.Country,
-    //         event.target.CityPopulation,
-    //         event.target.CityLocation
-    //     );
-    //     fetch("http://localhost:5000/api/city/",{
-    //         method:'POST',
-    //         body:formData
-    //     })
-    //     .then(res=>res.json())
-    //     .then((result)=>{
-    //         //this.imagesrc="http://localhost:5000/Photos/"+result;
-    //         alert(result);
-    //     },
-    //     (error)=>{
-    //         alert('photo insertion failed');
-    //     })
-    // }
-
-    handleFileSelected(event) {
+    handleFileSelected(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
 
-        var data = new FormData();
         var imagedata = document.querySelector('input[type="file"]').files[0];
-        var physicalPath = '../../public/images' + this.filename;
 
-        data.append("data", imagedata);
+        console.log(imagedata)
 
-        fetch("http://localhost:5000/api/city/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "multipart/form-data",
-                "Accept": "application/json",
-                "type": "formData"
+        const formData = new FormData();
+        formData.append("CityName", event.target.CityName.value);
+        formData.append("Country", event.target.Country.value);
+        formData.append("CityPopulation", event.target.CityPopulation.value);
+        formData.append("CityLocation", event.target.CityLocation.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/city/",{
+            method:'POST',
+            body:formData,
+            headers:{
+                'Authorization':token
             },
-            body: data
-            }).then(res=>res.json())
-            .then((result)=>{
-                //this.imagesrc="http://localhost:5000/Photos/"+result;
-                this.filename = physicalPath + result;
+        })
+        .then(res=>res.json())
+        .then((result)=>{
             alert(result);
-            },
-            (error)=>{
-                alert('photo insertion failed');
-            })
-        }
-
+        },
+        (error)=>{
+            alert('photo insertion failed');
+        })
+    }
 
     render(){
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" style={{height:700}}>
+                <div className="modal-content" >
                     <div className="modal-header">
                         <h3 className="modal-title">Add a City</h3>
                     </div>
@@ -138,8 +79,7 @@ export class AddCity extends Component{
                             </div>
 
                             <div>
-                                <Image width="200px" height="200px" src={"/images/" + this.filename}/>
-                                <input onChange={this.handleFileSelected} type="File"/>
+                                <input type="File"/>
                             </div>
 
                             <div>

@@ -18,36 +18,43 @@ export class AddFaculty extends Component{
     }
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
-        fetch("http://localhost:5000/api/fk",{
-        method:"POST",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-            FName:event.target.FName.value,
-            Pros:event.target.Pros.value,
-            Cons:event.target.Cons.value,
-            StudentCapacity:event.target.StudentCapacity.value,
-            Criter:event.target.Criter.value,
-            Price:event.target.Price.value
+
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+
+        console.log(imagedata)
+
+        const formData = new FormData();
+        formData.append("FName", event.target.FName.value);
+        formData.append("Pros", event.target.Pros.value);
+        formData.append("Cons", event.target.Cons.value);
+        formData.append("StudentCapacity", event.target.StudentCapacity.value);
+        formData.append("Criter", event.target.Criter.value);
+        formData.append("Price", event.target.Price.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/fk/",{
+            method:'POST',
+            body:formData,
+            headers:{
+                'Authorization':token
+            },
         })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('photo insertion failed');
+        })
     }
 
     render(){
         return(
             <Modal isOpen={true}>
-            <div className="container">
-                <div className="modal-content" >
+            <div className="container" style={{height:'650px'}} >
+                <div className="modal-content" style={{height:'600px'}}>
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Faculty</h3>
                     </div>
@@ -81,13 +88,17 @@ export class AddFaculty extends Component{
                             </div>
 
                             <div>
-                                <button type="submit" className="add-btn">
+                                <input type="File"/>
+                            </div>
+
+                            <div>
+                                <button type="submit" className="add-btn" style={{left:'330px',bottom:'10px'}}>
                                 Add Faculty
                                 </button>
                             </div>
 
                             <div className="modal-footer">
-                                <button onClick={this.props.onClose } className="button">Close</button>
+                                <button onClick={this.props.onClose } style={{left:'100px'}}>Close</button>
                             </div> 
                         </Form>
                     </div>

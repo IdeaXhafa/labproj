@@ -10,37 +10,44 @@ export class EditFaculty extends Component{
     }
 
     handleSubmit(event){
+        let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
-        fetch("http://localhost:5000/api/fk",{
-        method:"PUT",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify({
-            FId:event.target.FId.value,
-            FName:event.target.FName.value,
-            Pros:event.target.Pros.value,
-            Cons:event.target.Cons.value,
-            StudentCapacity:event.target.StudentCapacity.value,
-            Criter:event.target.Criter.value,
-            Price:event.target.Price.value
+
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+
+        console.log(imagedata)
+
+        const formData = new FormData();
+        formData.append("FId", event.target.FId.value);
+        formData.append("FName", event.target.FName.value);
+        formData.append("Pros", event.target.Pros.value);
+        formData.append("Cons", event.target.Cons.value);
+        formData.append("StudentCapacity", event.target.StudentCapacity.value);
+        formData.append("Criter", event.target.Criter.value);
+        formData.append("Price", event.target.Price.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/fk/",{
+            method:'PUT',
+            body:formData,
+            headers:{
+                'Authorization':token
+            },
         })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('update failed');
+        })
     }
 
     render(){
         return(
                 <Modal isOpen={true}>
                     <div className="container">
-                        <div className="modal-content" >
+                        <div className="modal-content" style={{height:'700px'}}>
                             <div className="modal-header">
                                 <h3 className="modal-title">Edit this University</h3>
                             </div>
@@ -104,6 +111,10 @@ export class EditFaculty extends Component{
                                                     placeholder="Price"/>
                                                 </Form.Group>
 
+                                    </div>
+
+                                    <div>
+                                        <input type="File"/>
                                     </div>
 
                                                 <Form.Group>

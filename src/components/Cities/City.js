@@ -51,30 +51,10 @@ export class City extends Component {
             }
         }
 
-        // getPhoto(imagesrc){
-        //         fetch("http://localhost:5000/api/city/SaveFile"+imagesrc,{
-        //             method:'GET',
-        //             header:{
-        //                 'Accept':'application/json',
-        //                 'Content-Type':'application/json'
-        //             }
-        //         })
-        // }
-
-        // refreshP(){
-        //     fetch("http://localhost:5000/api/city/SaveFile")
-        //     .then(response=>response.json())
-        //     .then(data=>{
-        //         this.setState({imagesrc:data});
-        //     });
-        // }
-
-
     render(){
         return (
             <div>
                 <CityCard>
-                {/* <CityIcon src={Icon1}/> */}
                 <CityIcon src={"/images/" + this.props.FileName} ></CityIcon>
                 {/* <Image width="100px" height="100px" {...this.imagesrc}/> */}
                 {/* <input type="file" onChange={this.fileSelectedHandler} />
