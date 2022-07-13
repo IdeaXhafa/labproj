@@ -12,27 +12,32 @@ export class EditPune extends Component{
     handleSubmit(event){
         let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
-        fetch("http://localhost:5000/api/punadhepraktika",{
-        method:"PUT",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json',
-            'Authorization':token
-        },
-        body:JSON.stringify({
-            PunaId:event.target.PunaId.value,
-            Punet:event.target.Punet.value,
-            Price:event.target.Price.value,
-            Kerkesa:event.target.Kerkesa.value
+
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+
+        console.log(imagedata)
+
+        const formData = new FormData();
+        formData.append("PunaId", event.target.PunaId.value);
+        formData.append("Punet", event.target.Punet.value);
+        formData.append("Price", event.target.Price.value);
+        formData.append("Kerkesa", event.target.Kerkesa.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/punadhepraktika/",{
+            method:'PUT',
+            body:formData,
+            headers:{
+                'Authorization':token
+            },
         })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('update failed');
+        })
     }
 
     render(){
@@ -79,6 +84,10 @@ export class EditPune extends Component{
                                                     placeholder="Kerkesa"/>
                                                 </Form.Group>
 
+                                    </div>
+
+                                    <div>
+                                        <input type="File"/>
                                     </div>
 
                                                 <Form.Group>

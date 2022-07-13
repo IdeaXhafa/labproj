@@ -20,26 +20,31 @@ export class AddPune extends Component{
     handleSubmit(event){
         let token = "Bearer " + localStorage.getItem('loginToken');
         event.preventDefault();
-        fetch("http://localhost:5000/api/punadhepraktika",{
-        method:"POST",
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json',
-            'Authorization':token
-        },
-        body:JSON.stringify({
-            Punet:event.target.Punet.value,
-            Price:event.target.Price.value,
-            Kerkesa:event.target.Kerkesa.value
+
+        var imagedata = document.querySelector('input[type="file"]').files[0];
+
+        console.log(imagedata)
+
+        const formData = new FormData();
+        formData.append("Punet", event.target.Punet.value);
+        formData.append("Price", event.target.Price.value);
+        formData.append("Kerkesa", event.target.Kerkesa.value);
+        formData.append("fileName", imagedata);
+
+        fetch("http://localhost:5000/api/punadhepraktika/",{
+            method:'POST',
+            body:formData,
+            headers:{
+                'Authorization':token
+            },
         })
-    })
-    .then(res=>res.json())
-    .then((result)=>{
-        alert(result);
-    },
-    (error)=>{
-        alert('Insertion failed!');
-    })
+        .then(res=>res.json())
+        .then((result)=>{
+            alert(result);
+        },
+        (error)=>{
+            alert('insertion failed');
+        })
     }
 
     render(){
@@ -66,6 +71,10 @@ export class AddPune extends Component{
                                 <Form.Control type="text" name="Kerkesa" 
                                                 required placeholder="Kerkesa"/>
 
+                            </div>
+
+                            <div>
+                                <input type="File"/>
                             </div>
 
                             <div>

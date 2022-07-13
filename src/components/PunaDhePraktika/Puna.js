@@ -16,6 +16,7 @@ export class Puna extends Component {
             Punet : [],
             Price : [],
             Kerkesa : [],
+            FileName : [],
             isEditModalOpen : false
         };
     }
@@ -46,14 +47,16 @@ export class Puna extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="box" key={this.props.PunaId}>
-                    <p>{this.props.Punet}</p>
-                    <p>{this.props.Price}</p>
-                    <p>{this.props.Kerkesa}</p>
+                <div className="box" key={this.props.PunaId} style={{border:'none'}}>
+                    <img src={"/images/" + this.props.FileName} style={{height:'150px',width:'200px',marginLeft: '16%'}} />
+                    <p style={{marginLeft: '16%', fontWeight:800, fontSize:'large', backgroundColor:'#3d8c40',width:'200px',textAlign:'center'}}>{this.props.Punet}</p>
+                    <p style={{marginLeft: '16%', color:'#265828', fontSize:'15px', fontWeight:500}}>How Much This Job is Paid: </p>
+                    <p style={{marginLeft: '20%'}}>{this.props.Price}</p>
+                    <p style={{marginLeft: '20%'}}>{this.props.Kerkesa}</p>
 
                     
                         <button className="mr-1" variant="info"
-                            onClick={this.toggleUserEditModal}>
+                            onClick={this.toggleUserEditModal} style={{marginLeft: '33%'}}>
                             Edit
                         </button> 
                         

@@ -45,12 +45,12 @@ export class Punet extends Component {
     }
 
     render(){
-        const {pune,ppid,pppunet,ppprice,ppkerkes}=this.state;
+        const {pune,ppid,pppunet,ppprice,ppkerkes,file}=this.state;
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <div id="states" className='contain'>
+        <div className='wrap'>
 
             {pune.map(pp =>
                 <Puna key={pp.PunaId}  
@@ -58,6 +58,7 @@ export class Punet extends Component {
                 Punet={pp.Punet} 
                 Price={pp.Price} 
                 Kerkesa={pp.Kerkesa} 
+                FileName={pp.FileName}
                 >
                 </Puna>
             )} 
@@ -69,6 +70,7 @@ export class Punet extends Component {
                   pppunet={pppunet}
                   ppprice={ppprice}
                   ppkerkes={ppkerkes}
+                  file={file}
                   />
                   :''}
                 

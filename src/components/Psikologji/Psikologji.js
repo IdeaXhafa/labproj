@@ -51,7 +51,8 @@ export class Psikologji extends Component {
                     <p>{this.props.Name} </p>
                     <p>Contact:  {this.props.Nr_Tel} </p>
                     <p>Price: {this.props.Price}</p>
-                    <p>How much time the therapist spends based on the Price: {this.props.Koha}</p>
+                    <p>How much time the therapist spends based on the Price: </p>
+                    <p>{this.props.Koha}</p>
                     
                         <button className="mr-1" variant="info"
                             onClick={this.toggleUserEditModal}>

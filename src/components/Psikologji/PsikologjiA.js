@@ -49,9 +49,9 @@ export class PsikologjiA extends Component {
 
     return (
     <div>
-    <div id="states">
+    <div id="states" className='psiko-container'>
         <p className='txt'>If you're looking for help with Therapy, we've given you some options you could follow</p>
-        <div>
+        <div className='psiko-wrapper'>
 
             {psikolog.map(psiko =>
                 <Psikologji key={psiko.PsikoId}  

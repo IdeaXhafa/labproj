@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 //import { Logout } from '../auth/LogOut/Logout'
 import Signup from '../auth/Signup/Signup';
 import { getSuggestedQuery } from '@testing-library/react';
+import { Route, Router } from 'react-router-dom';
 
 const NavBar = ({toggle}) => {
 
@@ -58,16 +59,17 @@ const NavBar = ({toggle}) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="PunaDhePraktika">Jobs & Payment</NavLinks>
+              <NavLinks to="/PunaDhePraktika">Jobs & Payment</NavLinks>
             </NavItem>
           </NavMenu>
           <NavLink>
-                    <Link to="signup" style={{color:'white'}}>
+          {/* <Route exact path="/signup" component={Signup} /> */}
+                    <Link to="signup" component={Signup} style={{color:'white'}}>
                     <h5>Sign up</h5>
                     </Link>
           </NavLink>
           <NavLink>
-                    <Link to="login" style={{color:'white'}}>
+                    <Link to="/login" style={{color:'white'}}>
                     <h5>Log in</h5>
                     </Link>
           </NavLink>
@@ -81,6 +83,9 @@ const NavBar = ({toggle}) => {
           </NavLink>
         </NavBarContainer>
       </Nav>
+
+
+      
     </>
   );
 }
