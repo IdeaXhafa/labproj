@@ -94,3 +94,22 @@
     padding-left: 10px; 
     background-color: #b8cfec;
 }
+
+.rec-container{
+    background-color: white;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.rec-wrapper{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    grid-gap:16px;
+    padding:0 50px;
+}

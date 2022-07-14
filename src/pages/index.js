@@ -51,9 +51,9 @@ const Home=()=> {
       <Recommandations/>
       <Punet/>
       <Infot/>
-      <PsikologjiA/>
       <Kerkesat/>
       <Financat/>
+      <PsikologjiA/>
       {/* <App/> */}
       </>
     )

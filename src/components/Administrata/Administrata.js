@@ -48,11 +48,11 @@ export class Administrata extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="box" key={this.props.AdministrataId}>
-                    <p>{this.props.Themeluesi} </p>
-                    <p> {this.props.Description}</p>
-                    <p> {this.props.Email}</p>
-                    <p>Contact: {this.props.NrTel}, {this.props.Administarta}</p>
+                <div className="box" key={this.props.AdministrataId} style={{border:'none'}}>
+                    <p className='par'>{this.props.Themeluesi} </p>
+                    <p className='par'> {this.props.Description}</p>
+                    <p className='par'> {this.props.Email}</p>
+                    <p className='par'>Contact: {this.props.NrTel}, {this.props.Administarta}</p>
 
                     
                         <button className="mr-1" variant="info"

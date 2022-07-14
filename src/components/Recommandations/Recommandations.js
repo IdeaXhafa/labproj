@@ -49,9 +49,9 @@ export class Recommandations extends Component {
 
     return (
         <div>
-        <div id="states">
+        <div id="states" className='rec-container'>
         <h3 className='uni'>Recommandations of earlier Students</h3>
-            <div>
+            <div className='rec-wrapper'>
 
             {recoms.map(rec =>
                 <Recommandation key={rec.RecId}  
@@ -62,7 +62,7 @@ export class Recommandations extends Component {
                 </Recommandation>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:150}}> Add Recommandation </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:150, marginLeft:'0px'}}> Add Recommandation </Button>
                   {this.state.isModalOpen ? 
                   <AddRecom onClose={this.toggleUserModal}
                   recid={recid}

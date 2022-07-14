@@ -76,7 +76,7 @@ export class Specializimi extends Component {
                                     Delete
                             </button> 
 
-                        <div className='box' style={{width:370}}>
+                        <div className='box' style={{width:370, backgroundColor:'#c175ff', border:'white'}}>
                             <p className='before'>Jobs you could work with this degree: {this.props.Jobs}</p>
                             <p className='before'>Salary: {this.props.Payment}</p>
                         </div>

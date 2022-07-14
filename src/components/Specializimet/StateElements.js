@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const StatesContainer = styled.div `
-    height:800px;
+export const SpecContainer = styled.div `
+    height:1300px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -18,13 +18,13 @@ export const StatesContainer = styled.div `
     }
 `
 
-export const StatesWrapper = styled.div `
+export const SpecWrapper = styled.div `
     max-width:1000px;
     margin:0 auto;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items:center;
-    grid-gap:16px;
+    grid-gap:10px;
     padding:0 50px;
 
     @media screen and (max-width: 1000px){

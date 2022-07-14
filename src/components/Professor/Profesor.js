@@ -51,10 +51,10 @@ export class Profesor extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="box" key={this.props.ProfId}>
+                <div className="box" key={this.props.ProfId} style={{borderColor:'#01579b'}}>
                     <CityIcon src={"/images/" + this.props.FileName} style={{marginLeft: '33%'}}></CityIcon>
                     <p className='prof-name'>{this.props.ProfName}</p> 
-                    <p>{this.props.Email}</p>
+                    <p>email: {this.props.Email}</p>
                     <p>{this.props.DrejtimiName} </p>
                     {/* {this.props.Drejtimi} */}
                      <p>Studied: {this.props.School}</p>

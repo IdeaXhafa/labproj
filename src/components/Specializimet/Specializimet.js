@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import { StatesContainer, StateH1, StateH2,
-        StateIcon, StateP, StatesCard, StatesWrapper,
+import { SpecContainer, StateH1, StateH2,
+        StateIcon, StateP, StatesCard, SpecWrapper,
         CityP, StateIdP, OptionsP } from './StateElements'
 
 import { Button, ButtonToolbar } from 'react-bootstrap'
@@ -49,9 +49,9 @@ export class Specializimet extends Component {
 
     return (
         <div>
-        <StatesContainer id="states">
+        <SpecContainer id="states">
     <h2 className='uni'>- Specalizations - How Much They're Known And Paid For Today !</h2>
-        <StatesWrapper>
+        <SpecWrapper>
 
             {specializim.map(spec =>
                 <Specializimi key={spec.SId}  
@@ -83,8 +83,8 @@ export class Specializimet extends Component {
                   />
                   :''}
                 
-        </StatesWrapper>
-        </StatesContainer>
+        </SpecWrapper>
+        </SpecContainer>
     </div>
     )
 }

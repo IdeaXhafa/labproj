@@ -49,9 +49,9 @@ export class Administratat extends Component {
 
     return (
     <div>
-    <div id="states">
-    <h2 className='uni'>About who created the University</h2>
-        <div>
+    <div id="states" className='ad-container'>
+    <h2 className='uni' style={{color:'#565656'}}>Who put a lot of work into these Universities ?</h2>
+        <div className='ad-wrapper'>
 
             {admins.map(ad =>
                 <Administrata key={ad.AdministrataId}  
@@ -64,7 +64,7 @@ export class Administratat extends Component {
                 </Administrata>
             )} 
 
-             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:120}}> Add Administrate </Button>
+             <Button onClick={this.toggleUserModal} variant='primary' className='add-a-state' style={{width:120}}> Add </Button>
                   {this.state.isModalOpen ? 
                   <AddAdministrat onClose={this.toggleUserModal}
                   adid={adid}

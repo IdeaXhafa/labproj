@@ -47,7 +47,7 @@ export class Recommandation extends Component {
     render(){
         return (
             <div className='holder'>
-                <div className="rec-box" style={{width: '40%', height: 'auto'}} key={this.props.RecId}>
+                <div className="rec-box" style={{width: '90%', height: 'auto',borderColor:'white'}} key={this.props.RecId}>
                     <p>{this.props.Name}</p>
                     <p>{this.props.Recomm}</p>
 
