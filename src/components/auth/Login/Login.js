@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import './loginStyle.css';
+//import './loginStyle.css';
 export class Login extends Component {
     constructor(){
         super();
@@ -62,7 +62,7 @@ export class Login extends Component {
 
     render() {
         return (
-            <div className="center">
+            <div className="center" style={{alignItems:'center'}}>
                 <h1>Log In</h1>
                 
                     <div className="txt_field">

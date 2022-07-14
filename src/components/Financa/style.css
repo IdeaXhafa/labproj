@@ -83,3 +83,22 @@
     width: 20rem;
     padding-left: 10px; 
 }
+
+.fin-container{
+    height:300px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#eceeee;
+}
+
+.fin-wrapper{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items:center;
+    grid-gap:16px;
+    padding:0 50px;
+}

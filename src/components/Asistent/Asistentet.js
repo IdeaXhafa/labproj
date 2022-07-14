@@ -50,7 +50,7 @@ export class Asistentet extends Component {
     return (
     <div>
     <StatesContainer id="states">
-    <h2 className='uni'>Asistent</h2>
+    <h2 className='uni'>And their best assistents</h2>
     <StatesWrapper>
 
             {asistent.map(asi =>

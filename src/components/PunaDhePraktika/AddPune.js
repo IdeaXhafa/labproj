@@ -51,7 +51,7 @@ export class AddPune extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" >
+                <div className="modal-content" style={{height:'480px'}}>
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Job</h3>
                     </div>

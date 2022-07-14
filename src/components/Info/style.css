@@ -87,3 +87,22 @@
     font-weight: 400;
     color: #01579b;
 }
+
+.info-container{
+    background-color: #aab2b1;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.info-wrapper{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    grid-gap:16px;
+    padding:0 50px;
+}

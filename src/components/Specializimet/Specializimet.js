@@ -50,7 +50,8 @@ export class Specializimet extends Component {
     return (
         <div>
         <SpecContainer id="states">
-    <h2 className='uni'>- Specalizations - How Much They're Known And Paid For Today !</h2>
+    <h2 className='uni'>- Specalizations - </h2>
+    <h2 >How Much They're Known And Paid For Today !</h2>
         <SpecWrapper>
 
             {specializim.map(spec =>

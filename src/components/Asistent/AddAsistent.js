@@ -47,7 +47,7 @@ export class AddAsistent extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" >
+                <div className="modal-content" style={{height:'400px'}} >
                     <div className="modal-header">
                         <h3 className="modal-title">Add an Asistent</h3>
                     </div>

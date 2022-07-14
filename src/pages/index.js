@@ -43,6 +43,7 @@ const Home=()=> {
       <States/> 
       <Cities/>
       <Fks/>
+      <Kerkesat/>
       {/* <Drejtimet/> */}
       <Specializimet/>
       <Profesors/>
@@ -51,7 +52,6 @@ const Home=()=> {
       <Recommandations/>
       <Punet/>
       <Infot/>
-      <Kerkesat/>
       <Financat/>
       <PsikologjiA/>
       {/* <App/> */}

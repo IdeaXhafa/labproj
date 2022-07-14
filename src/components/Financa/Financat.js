@@ -49,8 +49,8 @@ export class Financat extends Component {
 
     return (
     <div>
-    <div id="states">
-        <div>
+    <div id="states" className='fin-container'>
+        <div className='fin-wrapper'>
 
             {financa.map(fin =>
                 <Financa key={fin.FId}  

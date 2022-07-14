@@ -50,7 +50,7 @@ export class Kerkesat extends Component {
     return (
     <div>
         <div className='kerkesa'>
-            <div>
+            <div className='kerkesa-wrapper'>
             {kerkesat.map(ker =>
                 <Kerkesa key={ker.KId}  
                 KId={ker.KId} 

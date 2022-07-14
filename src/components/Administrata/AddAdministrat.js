@@ -48,7 +48,7 @@ export class AddAdministrat extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" >
+                <div className="modal-content" style={{height:'550px'}}>
                     <div className="modal-header">
                         <h3 className="modal-title">Add Administrate</h3>
                     </div>
@@ -78,7 +78,7 @@ export class AddAdministrat extends Component{
                             </div>
 
                             <div>
-                                <button type="submit" className="add-btn">
+                                <button type="submit" className="add-btn" style={{width:'100px'}}>
                                 Add Administrate
                                 </button>
                             </div> 

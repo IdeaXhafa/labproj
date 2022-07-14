@@ -51,7 +51,7 @@ export class AddSpecializim extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" style={{height:800}} >
+                <div className="modal-content" style={{height:760}} >
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Specalization</h3>
                     </div>

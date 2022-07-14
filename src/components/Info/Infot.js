@@ -49,9 +49,9 @@ export class Infot extends Component {
 
     return (
     <div>
-    <div id="states">
+    <div id="states" className='info-container'>
     <h3 className='uni'>Information for Courses to Focus on</h3>
-        <div>
+        <div className='info-wrapper'>
 
             {infot.map(inf =>
                 <Info key={inf.InfoId}  

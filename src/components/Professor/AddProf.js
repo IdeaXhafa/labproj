@@ -55,7 +55,7 @@ export class AddProf extends Component{
         return(
             <Modal isOpen={true}>
             <div className="container">
-                <div className="modal-content" style={{height:'650px'}} >
+                <div className="modal-content" style={{height:'680px'}} >
                     <div className="modal-header">
                         <h3 className="modal-title">Add a Prof</h3>
                     </div>

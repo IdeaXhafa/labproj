@@ -46,8 +46,8 @@ export class Info extends Component {
 
     render(){
         return (
-            <div className='holder'>
-                <div className="box" key={this.props.InfoId}>
+            <div className='holder' >
+                <div className="box" key={this.props.InfoId} style={{border:'none'}}>
                     <p>{this.props.Focus} </p>
                     <p>Courses: {this.props.Kurs} </p>
                     <p>Price: {this.props.Price} </p>

@@ -41,7 +41,7 @@ export class EditAdministrat extends Component{
         return(
                 <Modal isOpen={true}>
                     <div className="container">
-                        <div className="modal-content" >
+                        <div className="modal-content" style={{height:'700px'}} >
                             <div className="modal-header">
                                 <h3 className="modal-title">Edit this Administrate</h3>
                             </div>
