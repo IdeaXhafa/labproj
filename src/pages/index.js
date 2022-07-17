@@ -20,6 +20,7 @@ import {Profesors} from '../components/Professor/Profesors'
 import {Login} from '../components/auth/Login/Login'
 import {Signup} from '../components/auth/Signup/Signup'
 import { Logout } from '../components/auth/LogOut/Logout'
+import {Subject} from '../components/Subject/Subject'
 
 const Home=()=> {
     const [isOpen, setIsOpen] = useState(false)
@@ -39,6 +40,7 @@ const Home=()=> {
       </Routes>
       {/* <Logout onClick={Logout} /> */}
       <HomePage/>
+      {/* <Subject /> */}
       {/* <Login/> */}
       <States/> 
       <Cities/>

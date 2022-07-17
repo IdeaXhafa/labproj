@@ -87,12 +87,21 @@
 .ad-container{
     background-color: #aab2b1;
     height:800px;
-    display:flex;
-    flex-direction:column;
-    /* justify-content:center; */
-    align-items:center;
+    /* display:flex; */
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .par{
     color: white;
+}
+
+.holder{
+    margin-top: 30px;
+}
+
+.add-a-state{
+    margin-top: 20px;
+    margin-left: 34%;
 }

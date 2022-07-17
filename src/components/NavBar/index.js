@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import Signup from '../auth/Signup/Signup';
 import { getSuggestedQuery } from '@testing-library/react';
 import { Route, Router } from 'react-router-dom';
+import {Subject} from '../Subject/Subject'
 
 const NavBar = ({toggle}) => {
 
@@ -52,6 +53,20 @@ const NavBar = ({toggle}) => {
                       <div class="dropdown-content">
                         <div class="content">
                           <Drejtimet/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="subject">
+                <div class="dropdown">
+                    <span>Subjects</span>
+                    <div>
+                      <div class="dropdown-content">
+                        <div class="content">
+                          <Subject/>
                         </div>
                       </div>
                     </div>
